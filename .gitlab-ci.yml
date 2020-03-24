@@ -1,0 +1,32 @@
+stages:
+  - build
+  - test
+
+build:
+  image: node:12.4.0-alpine
+  stage: build
+  before_script:
+    - npm ci
+  script:
+    - npm run build:ci
+  artifacts:
+    paths:
+      - dist
+
+test:
+  image: circleci/node:12.4.0-browsers
+  stage: test
+  before_script:
+    - npm ci
+  script:
+    - npm run test:ci
+  artifacts:
+    paths:
+      - coverage
+    reports:
+      junit: JUnit/report.xml
+  coverage: '/(\d*.?\d+)%/'
+  needs:
+    - build
+  dependencies:
+    - build
