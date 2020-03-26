@@ -1,0 +1,31 @@
+<!-- This div is used to declare which form group the form control belongs to -->
+<div *ngIf="this.form && this.playersKey && this.newPlayerForm" [formGroup]="this.form">
+  <!-- Player form array -->
+  <div [formArrayName]="this.playersKey">
+    <div *ngFor="let p of this.players.controls; let i = index">
+      <div class="player-div">
+        <app-player-list-item [formGroup]="p"></app-player-list-item>
+        <!-- Button for triggering remove player at i event -->
+        <button mat-icon-button aria-label="Remove Player" color="primary" (click)="removePlayer(i)" type="button">
+          <mat-icon>clear</mat-icon>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Add new player form group -->
+  <div class="player-div">
+    <app-player-list-item [formGroup]="this.newPlayerForm"></app-player-list-item>
+    <!-- Button for triggering add new player event -->
+    <button
+      mat-icon-button
+      aria-label="Add New Player"
+      color="primary"
+      [disabled]="!this.newPlayerForm.valid"
+      (click)="addPlayer()"
+      type="button"
+    >
+      <mat-icon>add</mat-icon>
+    </button>
+  </div>
+</div>

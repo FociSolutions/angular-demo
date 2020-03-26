@@ -1,0 +1,24 @@
+<!-- This div is used to declare which form group the form control belongs to -->
+<div *ngIf="this.form" class="player-wrapper-div" [formGroup]="this.form">
+  <!-- Player name form control -->
+  <mat-form-field>
+    <mat-label [attr.for]="this.name.key">{{ this.name.label }}</mat-label>
+    <input matInput [maxlength]="this.name.maxLen" [formControlName]="this.name.key" required />
+    <mat-hint align="end">{{ this.nameControl.value.length }} / {{ this.name.maxLen }}</mat-hint>
+    <mat-error *ngIf="this.nameControl.hasError('unique')">
+      Player already exist
+    </mat-error>
+    <mat-error *ngIf="this.nameControl.hasError('required')"> Player name is required </mat-error>
+  </mat-form-field>
+
+  <!-- Player type form control -->
+  <mat-form-field>
+    <mat-label [attr.for]="this.type.key">{{ this.type.label }}</mat-label>
+    <mat-select [formControlName]="this.type.key" required>
+      <mat-option *ngFor="let t of this.type.options" [value]="t.value">
+        {{ t.key }}
+      </mat-option>
+    </mat-select>
+    <mat-error *ngIf="this.typeControl.hasError('required')"> Player type is required </mat-error>
+  </mat-form-field>
+</div>
