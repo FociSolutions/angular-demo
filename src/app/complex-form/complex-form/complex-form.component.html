@@ -1,0 +1,22 @@
+<div class="wrapper-div">
+  <mat-card>
+    <mat-card-header>
+      <mat-card-title>Create A New Team</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <!-- The main form group -->
+      <form [formGroup]="this.teamForm" (ngSubmit)="onSubmit()">
+        <app-team-name-input [name]="this.emptyTeam.name" [form]="this.teamForm"></app-team-name-input>
+
+        <app-player-list
+          [playersKey]="this.emptyTeam.playersKey"
+          [form]="this.teamForm"
+          [newPlayerForm]="this.newPlayerForm"
+        ></app-player-list>
+
+        <!-- Button for triggering on submit event -->
+        <button mat-flat-button color="primary" type="submit" [disabled]="!this.teamForm.valid">Submit</button>
+      </form>
+    </mat-card-content>
+  </mat-card>
+</div>

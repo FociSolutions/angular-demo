@@ -1,0 +1,13 @@
+<!-- This div is used to declare which form group the form control belongs to -->
+<div *ngIf="this.form && this.name" [formGroup]="this.form">
+  <!-- Team name form control -->
+  <mat-form-field>
+    <mat-label [attr.for]="this.name.key">{{ this.name.label }}</mat-label>
+    <input matInput [maxlength]="this.name.maxLen" [formControlName]="this.name.key" required />
+    <mat-hint align="end">{{ this.teamNameControl.value.length }} / {{ this.name.maxLen }}</mat-hint>
+    <mat-error *ngIf="this.teamNameControl.hasError('alphaNumeric')">
+      Team name cannot contain any symbols
+    </mat-error>
+    <mat-error *ngIf="this.teamNameControl.hasError('required')"> Team name is <strong>required</strong> </mat-error>
+  </mat-form-field>
+</div>
