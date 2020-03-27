@@ -18,6 +18,8 @@ build-docs:
   stage: build
   before_script:
     - npm ci
+    - apk add curl
+    - apk add jq
   script:
     - npm run build:docs:ci
     - PR_ID=$(curl -s -L "http://gitlab.com/api/v4/projects/${CI_PROJECT_ID}/merge_requests?private_token=${OAUTH_TOKEN}&state=opened" | jq -r ".[]|select(.sha == \"$CI_COMMIT_SHA\")|.iid")
