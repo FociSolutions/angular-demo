@@ -1,0 +1,37 @@
+<div class="container column">
+  <h1 class="title">Fibonacci Numbers</h1>
+  <div class="row">
+    <div class="column" [style.flex]="2">
+      <div class="row fib-number-div">
+        <button mat-icon-button color="primary" (click)="this.previousX(1)">
+          <mat-icon [inline]="true">chevron_left</mat-icon>
+        </button>
+        <span class="fib-number">{{ this.nFib }}</span>
+        <button mat-icon-button color="primary" (click)="this.nextX(1)">
+          <mat-icon [inline]="true">chevron_right</mat-icon>
+        </button>
+      </div>
+      <div class="column control-div">
+        <div class="row skip-controls-div">
+          <button mat-flat-button color="primary" (click)="this.previousX(5)">Go Back 5</button>
+          <button mat-flat-button color="primary" (click)="this.nextX(5)">Go Forward 5</button>
+        </div>
+      </div>
+      <div class="column even-odd-filtering">
+        <div class="row even-numbers">
+          <h2>Even Fibnonacci Numbers:</h2>
+          <p>
+            <span *ngFor="let num of this.even | async">{{ num }},</span>
+          </p>
+        </div>
+        <div class="row odd-numbers">
+          <h2>Odd Fibonacci Numbers:</h2>
+          <p>
+            <span *ngFor="let num of this.odd | async">{{ num }},</span>
+          </p>
+        </div>
+      </div>
+    </div>
+    <app-sequence-list [style.flex]="1"></app-sequence-list>
+  </div>
+</div>

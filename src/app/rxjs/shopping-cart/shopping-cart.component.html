@@ -1,0 +1,42 @@
+<div class="container row">
+  <div class="column">
+    <div class="row item-input">
+      <mat-form-field>
+        <mat-label>Item</mat-label>
+        <input matInput [formControl]="this.itemControl" />
+        <mat-error *ngIf="this.itemControl.hasError('required')">item is required</mat-error>
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Value</mat-label>
+        <input matInput type="number" [formControl]="this.valueControl" />
+        <mat-error *ngIf="this.valueControl.hasError('required')">value is required</mat-error>
+      </mat-form-field>
+      <button mat-flat-button color="primary" (click)="this.addItem()">Add Item</button>
+    </div>
+  </div>
+  <div class="column">
+    <h1>Shopping Cart</h1>
+    <div class="column item-list">
+      <div class="row item-row" *ngFor="let item of this.items; let i = index">
+        <span>{{ item.item }}</span>
+        <div class="row">
+          <span>{{ item.value | currency }} </span><mat-icon (click)="this.removeItem(i)">delete</mat-icon>
+        </div>
+      </div>
+    </div>
+    <div class="column cart-summary">
+      <div class="row summary-row">
+        <h2>total before tax</h2>
+        <p>{{ this.beforeTax | async | currency }}</p>
+      </div>
+      <div class="row summary-row">
+        <h2>tax</h2>
+        <p>{{ this.tax | async | currency }}</p>
+      </div>
+      <div class="row summary-row">
+        <h2>total after tax</h2>
+        <p>{{ this.afterTax | async | currency }}</p>
+      </div>
+    </div>
+  </div>
+</div>

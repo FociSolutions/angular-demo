@@ -1,0 +1,25 @@
+.container {
+  padding-top: 1em;
+  align-items: center;
+
+  section {
+    width: 50vw;
+
+    h2 {
+      text-align: center;
+    }
+
+    .demo-details {
+      justify-content: space-around;
+      align-items: center;
+
+      .results {
+        align-self: stretch;
+      }
+
+      h3 {
+        font-weight: 500;
+      }
+    }
+  }
+}
