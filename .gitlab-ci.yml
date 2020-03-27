@@ -19,7 +19,8 @@ build-docs:
   before_script:
     - npm ci
   script:
-    - npm run build:docs:ci
+    - npm run test:docs
+    - npm run build:docs
   artifacts:
     untracked: false
     expire_in: 30 days
