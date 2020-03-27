@@ -20,6 +20,8 @@ build-docs:
     - npm ci
   script:
     - npm run build:docs:ci
+    - PR_ID=$(curl -s -L "http://gitlab.com/api/v4/projects/${CI_PROJECT_ID}/merge_requests?private_token=${OAUTH_TOKEN}&state=opened" | jq -r ".[]|select(.sha == \"$CI_COMMIT_SHA\")|.iid")
+    - node ./pipeline/create_note.js
   artifacts:
     untracked: false
     expire_in: 30 days
@@ -43,3 +45,4 @@ test:
     - build
   dependencies:
     - build
+
