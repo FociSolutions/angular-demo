@@ -9,6 +9,7 @@
     "test": "ng test",
     "build:ci": "ng build --prod --sourceMap=false",
     "build:docs": "compodoc -p ./tsconfig.json --theme Readthedocs",
+    "build:docs:ci": "compodoc -p ./tsconfig.json --theme Readthedocs --coverageTest --coverageTestThresholdFail false",
     "test:ci": "ng test --watch=false --code-coverage --source-map true",
     "lint": "ng lint",
     "e2e": "ng e2e"
