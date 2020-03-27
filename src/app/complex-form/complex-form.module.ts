@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import { ComplexFormRoutingModule } from './complex-form-routing.module';
 import { ComplexFormComponent } from './complex-form/complex-form.component';
 import { TeamNameInputComponent } from './team-name-input/team-name-input.component';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
@@ -16,12 +15,15 @@ import { ResultComponent } from './shared/dialogs/result/result.component';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatCardModule } from '@angular/material/card';
 import { PlayerListComponent } from './player-list/player-list.component';
+import { RouterModule, Routes } from '@angular/router';
+
+const routes: Routes = [{ path: '', component: ComplexFormComponent }];
 
 @NgModule({
   declarations: [ComplexFormComponent, TeamNameInputComponent, PlayerListItemComponent, ResultComponent, PlayerListComponent],
   imports: [
+    RouterModule.forChild(routes),
     CommonModule,
-    ComplexFormRoutingModule,
     FormsModule,
     ReactiveFormsModule,
     MatInputModule,
