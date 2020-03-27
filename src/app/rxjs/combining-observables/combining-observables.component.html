@@ -1,0 +1,80 @@
+<div class="column container">
+  <h1>Examples Of Combining Observables</h1>
+  <section>
+    <h2>Concat Observables</h2>
+    <div class="row demo-details">
+      <div class="column input-observables">
+        <h3>Input Observables</h3>
+        <!-- Uses the template defined at the bottom of the file to display the input observables. It references it using the id inputObservables -->
+        <ng-container *ngTemplateOutlet="inputObservables"></ng-container>
+      </div>
+      <div class="column results">
+        <h3>Concat Results</h3>
+        <p>{{ this.concatResults | json }}</p>
+      </div>
+      <div>
+        <button mat-flat-button (click)="this.runConcat()" color="primary">
+          <mat-icon>{{ this.concatResults.length > 0 ? 'replay' : 'play_arrow' }}</mat-icon>
+        </button>
+      </div>
+    </div>
+  </section>
+  <section>
+    <h2>Merge Observables</h2>
+    <div class="row demo-details">
+      <div class="column input-observables">
+        <h3>Input Observables</h3>
+        <!-- Uses the template defined at the bottom of the file to display the input observables. It references it using the id inputObservables -->
+        <ng-container *ngTemplateOutlet="inputObservables"></ng-container>
+      </div>
+      <div class="column results">
+        <h3>Merge Results</h3>
+        <p>{{ this.mergeResults | json }}</p>
+      </div>
+      <div>
+        <button mat-flat-button (click)="this.runMerge()" color="primary">
+          <mat-icon>{{ this.mergeResults.length > 0 ? 'replay' : 'play_arrow' }}</mat-icon>
+        </button>
+      </div>
+    </div>
+  </section>
+  <section>
+    <h2>Zip Observables</h2>
+    <div class="row demo-details">
+      <div class="column input-observables">
+        <h3>Input Observables</h3>
+        <!-- Uses the template defined at the bottom of the file to display the input observables. It references it using the id inputObservables -->
+        <ng-container *ngTemplateOutlet="inputObservables"></ng-container>
+      </div>
+      <div class="column results">
+        <h3>Zip Results</h3>
+        <p>{{ this.zipResults | json }}</p>
+      </div>
+      <div>
+        <button mat-flat-button (click)="this.runZip()" color="primary">
+          <mat-icon>{{ this.zipResults.length > 0 ? 'replay' : 'play_arrow' }}</mat-icon>
+        </button>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!--
+  Created a template to display the input observables so I wouldn't have to re-write this section 3 times.
+  The same could have been done for the rest of the sections but you would have to pass in context to populate
+  the different titles. This was relatively easier and quicker for the demo's purpose.
+-->
+<ng-template #inputObservables>
+  <p>
+    <!--
+      The async pipe will subscribe to an observable and pass the results to the json pipe. An async pipe will
+      unsubscribe for you and is safe from memory leaks. It's convenient to use when you only want to display
+      the results from an observable and don't need to perform any effects on the result.
+    -->
+    {{ this.observableOneAsArray | async | json }}
+  </p>
+  <p>
+    {{ this.observableTwoAsArray | async | json }}
+  </p>
+  <p>{{ this.observableThreeAsArray | async | json }}</p>
+</ng-template>

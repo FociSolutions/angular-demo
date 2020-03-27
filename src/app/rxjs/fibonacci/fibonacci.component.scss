@@ -1,0 +1,66 @@
+.container {
+  padding-top: 1em;
+  width: 100%;
+
+  .title {
+    align-self: center;
+  }
+
+  .fib-number-div {
+    margin-top: 1em;
+    align-items: center;
+    justify-content: space-between;
+    .fib-number {
+      font-size: 2em;
+    }
+    button {
+      width: 4em;
+      height: 4em;
+
+      mat-icon {
+        font-size: 4em;
+      }
+    }
+  }
+
+  .control-div {
+    .skip-controls-div {
+      justify-content: space-between;
+      margin-top: 1em;
+    }
+  }
+
+  app-sequence-list {
+    margin-top: 1em;
+  }
+
+  .control-div,
+  .fib-number-div {
+    width: 25vw;
+    align-self: center;
+  }
+
+  .even-odd-filtering {
+    margin-top: 1em;
+    margin-left: 1em;
+
+    .even-numbers,
+    .odd-numbers {
+      align-items: center;
+
+      h2 {
+        margin-right: 0.5em;
+        white-space: nowrap;
+      }
+      p {
+        font-size: 1.5em;
+        word-break: break-all;
+        line-height: 1.3em;
+
+        span {
+          margin-left: 0.25em;
+        }
+      }
+    }
+  }
+}

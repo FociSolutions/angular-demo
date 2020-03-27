@@ -1,1 +1,15 @@
-<router-outlet></router-outlet>
+<mat-sidenav-container class="container">
+  <mat-sidenav mode="side" opened>
+    <div class="links column">
+      <a routerLink="/form">Custom Forms</a>
+      <a routerLink="/rxjs">RxJS Library</a>
+    </div>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <div *ngIf="this.isLandingPage()" class="column landing-container">
+      <h1>{{ this.title }}</h1>
+      <h2>Click on one of the links to the left to view a demo</h2>
+    </div>
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>
