@@ -4,9 +4,12 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
+    "serve:docs": "compodoc -p ./tsconfig.json --theme Readthedocs -w -s",
     "build": "ng build",
     "test": "ng test",
     "build:ci": "ng build --prod --sourceMap=false",
+    "build:docs": "compodoc -p ./tsconfig.json --theme Readthedocs",
+    "build:docs:ci": "compodoc -p ./tsconfig.json --theme Readthedocs --coverageTest --coverageTestThresholdFail false",
     "test:ci": "ng test --watch=false --code-coverage --source-map true",
     "lint": "ng lint",
     "e2e": "ng e2e"
@@ -33,6 +36,7 @@
     "@angular/cli": "~9.0.7",
     "@angular/compiler-cli": "~9.0.7",
     "@angular/language-service": "~9.0.7",
+    "@compodoc/compodoc": "^1.1.11",
     "@types/faker": "^4.1.11",
     "@types/jasmine": "~3.5.0",
     "@types/jasminewd2": "~2.0.3",

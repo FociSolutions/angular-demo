@@ -13,6 +13,19 @@ build:
     paths:
       - dist
 
+build-docs:
+  image: node:12.4.0-alpine
+  stage: build
+  before_script:
+    - npm ci
+  script:
+    - npm run build:docs:ci
+  artifacts:
+    untracked: false
+    expire_in: 30 days
+    paths:
+      - documentation
+
 test:
   image: circleci/node:12.4.0-browsers
   stage: test
@@ -30,3 +43,4 @@ test:
     - build
   dependencies:
     - build
+
