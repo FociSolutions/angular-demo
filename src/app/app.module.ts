@@ -17,7 +17,11 @@ const routes: Routes = [
     path: 'rxjs',
     loadChildren: () => import('./rxjs/rxjs.module').then(m => m.RxjsModule)
   },
-  { path: 'i18n', loadChildren: () => import('./i18n/i18n.module').then(m => m.I18nModule) }
+  { path: 'i18n', loadChildren: () => import('./i18n/i18n.module').then(m => m.I18nModule) },
+  {
+    path: 'storage',
+    loadChildren: () => import('./web-storage/web-storage.module').then(m => m.WebStorageModule)
+  }
 ];
 
 @NgModule({

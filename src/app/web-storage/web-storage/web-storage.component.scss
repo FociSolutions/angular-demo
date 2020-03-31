@@ -1,0 +1,54 @@
+.container {
+  padding: 1em;
+  width: calc(100%-2em);
+
+  .controls-div,
+  .local-storage-div,
+  .session-storage-div {
+    flex: 1;
+
+    .title {
+      align-items: center;
+
+      h2 {
+        margin-bottom: 0;
+        margin-right: 0.5em;
+      }
+    }
+  }
+
+  .controls-div {
+    align-items: start;
+    margin-right: 1em;
+
+    .add-controls-div,
+    .delete-controls-div {
+      border: 1pt solid rgba(0, 0, 0, 0.6);
+      border-radius: 1em;
+      margin-bottom: 1em;
+
+      h2 {
+        align-self: center;
+        margin-top: 1em;
+        margin-bottom: 0;
+      }
+    }
+
+    mat-form-field {
+      align-self: stretch;
+      margin: 1em 4em;
+      input {
+        margin-top: 0.5em;
+      }
+    }
+
+    button {
+      margin: 0 2em;
+    }
+
+    .add-buttons-div {
+      margin-bottom: 1em;
+      align-items: center;
+    }
+  }
+}
