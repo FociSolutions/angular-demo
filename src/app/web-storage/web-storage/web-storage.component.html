@@ -1,0 +1,55 @@
+<div class="row container">
+  <div class="column controls-div">
+    <div class="column add-controls-div">
+      <h2>Add/Update An Item</h2>
+      <mat-form-field>
+        <label>Item Key</label>
+        <input [formControl]="this.addInputKeyField" matInput />
+        <mat-error *ngIf="this.addInputKeyField.hasError('required')">Item key is required</mat-error>
+      </mat-form-field>
+      <mat-form-field>
+        <label>Item Value</label>
+        <input [formControl]="this.addInputValueField" matInput />
+      </mat-form-field>
+      <div class="add-buttons-div row">
+        <button mat-flat-button color="primary" (click)="this.updateSessionStorage()" [disabled]="this.addInputKeyField.invalid">
+          Add To Session Storage
+        </button>
+        <button mat-flat-button color="primary" (click)="this.updateLocalStorage()" [disabled]="this.addInputKeyField.invalid">
+          Add To Local Storage
+        </button>
+      </div>
+    </div>
+
+    <div class="column delete-controls-div">
+      <h2>Delete An Item</h2>
+      <mat-form-field>
+        <label>Item Key</label>
+        <input [formControl]="this.deleteInputKeyField" matInput />
+        <mat-error *ngIf="this.deleteInputKeyField.hasError('required')">Item key is required</mat-error>
+      </mat-form-field>
+      <div class="add-buttons-div row">
+        <button mat-flat-button color="warn" (click)="this.deleteItemFromSessionStorage()" [disabled]="this.deleteInputKeyField.invalid">
+          Delete From Session Storage
+        </button>
+        <button mat-flat-button color="warn" (click)="this.deleteItemFromLocalStorage()" [disabled]="this.deleteInputKeyField.invalid">
+          Delete From Local Storage
+        </button>
+      </div>
+    </div>
+  </div>
+  <div class="column session-storage-div">
+    <div class="row title">
+      <h2>Session Storage State</h2>
+      <button mat-icon-button color="warn" (click)="this.clearSessionStorage()"><mat-icon>delete</mat-icon></button>
+    </div>
+    <pre><code>{{this.sessionStorageState | async | json}}</code></pre>
+  </div>
+  <div class="column local-storage-div">
+    <div class="row title">
+      <h2>Local Storage State</h2>
+      <button mat-icon-button color="warn" (click)="this.clearLocalStorage()"><mat-icon>delete</mat-icon></button>
+    </div>
+    <pre><code>{{this.localStorageState | async | json}}</code></pre>
+  </div>
+</div>
