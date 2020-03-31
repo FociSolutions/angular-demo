@@ -27,6 +27,8 @@
     "@angular/platform-browser-dynamic": "~9.0.7",
     "@angular/router": "~9.0.7",
     "@fluffy-spoon/substitute": "^1.117.0",
+    "@ngx-translate/core": "^12.1.2",
+    "@ngx-translate/http-loader": "^4.0.0",
     "@rxweb/reactive-form-validators": "^1.9.9-beta4",
     "ngx-logger": "^4.1.2",
     "rxjs": "~6.5.4",
