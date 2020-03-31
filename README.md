@@ -1,27 +1,17 @@
-# AngularDemo
+# Angular Demo
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.0.7.
+This project contains a collection of demo modules that showcase different techniques and features of Angular development and how to implement them.
 
-## Development server
+## Recommended VSCode Plugins
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Since we prefer to use VSCode to implement our Angular application, the following are some VScode plugin recommendations to make the development process a little bit easier:
 
-## Code scaffolding
+- Angular Essentials: `johnpapa.angular-essentials`
+- Prettier - Code formatter: `esbenp.prettier-vscode`
+- npm: `eg2.vscode-npm-script`
+- npm Intellisense: `christian-kohler.npm-intellisense`
+- Node.js Modules Intellisense: `leizongmin.node-module-intellisense`
+- Code Spell Checker: `streetsidesoftware.code-spell-checker`
+- GitLens — Git supercharged: `eamodio.gitlens`
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+The list can also be found in `.vscode/extensions.json` of this solution, please copy `extensions.json` file to other Angular application's `.vscode` folder.
