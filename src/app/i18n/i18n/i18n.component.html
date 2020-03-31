@@ -1,0 +1,15 @@
+<mat-card class="example-card">
+  <mat-card-header>
+    <!-- Pass translation key using directive -->
+    <mat-card-title [translate]="'I18N.TITLE'"></mat-card-title>
+    <!-- Use content of element as translation key and passing additional parameter using translateParams -->
+    <mat-card-subtitle translate [translateParams]="this.langParam">I18N.SUBTITLE</mat-card-subtitle>
+  </mat-card-header>
+  <mat-card-content>
+    <app-content-card></app-content-card>
+  </mat-card-content>
+  <mat-card-actions>
+    <!-- Grab translation using pipe, additional parameter can be passed using <key> | translation:<param> syntax -->
+    <button mat-button (click)="this.changeLanguage()">{{ 'I18N.BUTTONS.LANGUAGE' | translate }}</button>
+  </mat-card-actions>
+</mat-card>

@@ -6,6 +6,7 @@ import { LoggerModule, NgxLoggerLevel } from 'ngx-logger';
 import { HttpClientModule } from '@angular/common/http';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { Routes, RouterModule } from '@angular/router';
+import { MatButtonModule } from '@angular/material/button';
 
 const routes: Routes = [
   {
@@ -15,13 +16,15 @@ const routes: Routes = [
   {
     path: 'rxjs',
     loadChildren: () => import('./rxjs/rxjs.module').then(m => m.RxjsModule)
-  }
+  },
+  { path: 'i18n', loadChildren: () => import('./i18n/i18n.module').then(m => m.I18nModule) }
 ];
 
 @NgModule({
   declarations: [AppComponent],
   imports: [
     MatSidenavModule,
+    MatButtonModule,
     BrowserModule,
     RouterModule.forRoot(routes),
     BrowserAnimationsModule,
