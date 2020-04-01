@@ -1,0 +1,23 @@
+<div class="column container">
+  <div class="column uppercase-demo-div">
+    <h2>Convert To Uppercase</h2>
+    <div class="row">
+      <app-text-input (textChange)="this.onChange($event)"></app-text-input>
+      <app-uppercase-text [text]="this.text"></app-uppercase-text>
+    </div>
+  </div>
+  <div class="column multi-input-demo-div">
+    <h2>Listening For Multiple Inputs</h2>
+    <div class="row">
+      <div class="column">
+        <h3>num1 = {{ this.num1 }}</h3>
+        <h3>num2 = {{ this.num2 }}</h3>
+        <div class="row">
+          <button mat-flat-button color="primary" (click)="this.incrementNum1()">Increment Num1</button>
+          <button mat-flat-button color="primary" (click)="this.incrementNum1AndNum2()">Increment Both</button>
+        </div>
+      </div>
+      <app-multi-input-example [x]="this.num1" [y]="this.num2"></app-multi-input-example>
+    </div>
+  </div>
+</div>

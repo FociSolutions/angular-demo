@@ -1,0 +1,39 @@
+.container {
+  align-items: center;
+  padding-top: 1em;
+
+  .uppercase-demo-div,
+  .multi-input-demo-div {
+    border: 1px solid rgba(0, 0, 0.5);
+    border-radius: 1em;
+    padding: 2em;
+    width: 50vw;
+    margin-bottom: 1em;
+
+    .row {
+      justify-content: space-between;
+      align-items: center;
+
+      app-text-input {
+        margin-right: 1em;
+      }
+
+      app-text-input,
+      app-uppercase-text {
+        flex: 1;
+      }
+    }
+  }
+
+  .multi-input-demo-div {
+    width: 25vw;
+
+    .row {
+      align-items: flex-start;
+    }
+
+    button {
+      margin-right: 1em;
+    }
+  }
+}
