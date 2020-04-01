@@ -21,6 +21,10 @@ const routes: Routes = [
   {
     path: 'storage',
     loadChildren: () => import('./web-storage/web-storage.module').then(m => m.WebStorageModule)
+  },
+  {
+    path: 'input-and-output',
+    loadChildren: () => import('./input-and-output/input-and-output.module').then(m => m.InputAndOutputModule)
   }
 ];
 
