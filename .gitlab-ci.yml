@@ -47,6 +47,7 @@ test:
     - build
 
 pages:
+  image: node:12.4.0-alpine
   stage: deploy
   script:
   - npm run build:docs
