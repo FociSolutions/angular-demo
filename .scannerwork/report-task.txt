@@ -1,0 +1,6 @@
+projectKey=angualr-demo
+serverUrl=https://sonarqube-sonarqube-sonarqube.apps.okd.foci-lab.ca
+serverVersion=8.2.0.32929
+dashboardUrl=https://sonarqube-sonarqube-sonarqube.apps.okd.foci-lab.ca/dashboard?id=angualr-demo
+ceTaskId=AXE8ZZVVgA5xG3qMyJAI
+ceTaskUrl=https://sonarqube-sonarqube-sonarqube.apps.okd.foci-lab.ca/api/ce/task?id=AXE8ZZVVgA5xG3qMyJAI
