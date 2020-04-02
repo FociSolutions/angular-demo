@@ -12,6 +12,7 @@
 
 #documentation
 /documentation
+/public
 
 # profiling files
 chrome-profiler-events*.json

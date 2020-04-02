@@ -2,6 +2,11 @@
 
 This project contains a collection of demo modules that showcase different techniques and features of Angular development and how to implement them.
 
+# Samples
+
+Check out the samples [here](./additional-documentation/samples.html)
+
+
 ## Recommended VSCode Plugins
 
 Since we prefer to use VSCode to implement our Angular application, the following are some VScode plugin recommendations to make the development process a little bit easier:
