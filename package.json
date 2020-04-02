@@ -41,6 +41,7 @@
     "@angular/compiler-cli": "~9.0.7",
     "@angular/language-service": "~9.0.7",
     "@compodoc/compodoc": "^1.1.11",
+    "@ngneat/spectator": "^5.3.1",
     "@types/faker": "^4.1.11",
     "@types/jasmine": "~3.5.0",
     "@types/jasminewd2": "~2.0.3",

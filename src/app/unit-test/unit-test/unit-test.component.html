@@ -1,0 +1,12 @@
+<div>
+  <mat-form-field>
+    <mat-label [attr.for]="this.echoInput">Value to echo</mat-label>
+    <input matInput [formControl]="this.echoInput" />
+  </mat-form-field>
+  <!-- Button for triggering echo -->
+  <button mat-button aria-label="Echo" color="primary" [disabled]="!this.echoInput.valid" (click)="startEcho()" type="button">
+    ECHO
+  </button>
+</div>
+
+<div>{{ this.echoResult | uppercase }}</div>
