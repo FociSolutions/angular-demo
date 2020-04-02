@@ -1,6 +1,7 @@
 stages:
   - build
   - test
+  - deploy
 
 build:
   image: node:12.4.0-alpine
@@ -25,7 +26,7 @@ build-docs:
     untracked: false
     expire_in: 30 days
     paths:
-      - documentation
+      - public
 
 test:
   image: circleci/node:12.4.0-browsers
@@ -45,3 +46,12 @@ test:
   dependencies:
     - build
 
+pages:
+  stage: deploy
+  script:
+  - npm run build:docs
+  artifacts:
+    paths:
+    - public
+  only:
+  - master
