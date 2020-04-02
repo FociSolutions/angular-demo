@@ -49,6 +49,8 @@ test:
 pages:
   image: node:12.4.0-alpine
   stage: deploy
+  before_script:
+    - npm ci
   script:
   - npm run build:docs
   artifacts:
