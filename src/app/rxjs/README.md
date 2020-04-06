@@ -2,7 +2,7 @@
 
 This lazy loaded feature module is created to demonstrate how to create, subscribe to, and transform Observables and Subjects. While this module aims to demo the more common operators, and subjects it does not cover everything within the RxJS library. For more information please see [the RxJS documentation](https://rxjs-dev.firebaseapp.com/api) and [the Learn RxJS Documentation](https://www.learnrxjs.io/)
 
-_Folder structure of this module loosely follows [the Angular style guid](https://angular.io/guide/styleguide)._
+_Folder structure of this module loosely follows [the Angular style guide](https://angular.io/guide/styleguide)._
 
 ## Subjects
 

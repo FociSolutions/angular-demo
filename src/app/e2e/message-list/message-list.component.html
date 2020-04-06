@@ -1,0 +1,6 @@
+<div class="column">
+  <div class="row message-item" *ngFor="let message of this.messages; let i = index">
+    <p class="message">"{{ message }}"</p>
+    <mat-icon class="delete-icon" (click)="this.openDeleteMessagePopup(i)">delete</mat-icon>
+  </div>
+</div>

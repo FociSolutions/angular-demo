@@ -6,7 +6,7 @@ Demonstrate what we are expecting when creating unit tests for different class t
 - https://jasmine.github.io/2.3/introduction
 - https://github.com/ngneat/spectator
 
-_Folder structure of this module loosely follows [the Angular style guid](https://angular.io/guide/styleguide)._
+_Folder structure of this module loosely follows [the Angular style guide](https://angular.io/guide/styleguide)._
 
 ### Models
 

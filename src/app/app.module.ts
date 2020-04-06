@@ -26,7 +26,8 @@ const routes: Routes = [
   {
     path: 'input-and-output',
     loadChildren: () => import('./input-and-output/input-and-output.module').then(m => m.InputAndOutputModule)
-  }
+  },
+  { path: 'e2e', loadChildren: () => import('./e2e/e2e.module').then(m => m.E2eModule) }
 ];
 
 @NgModule({

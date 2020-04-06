@@ -8,7 +8,7 @@ Demonstrate how to use [ngx-translate](https://github.com/ngx-translate/core) in
 
 This module display a card with language switch button.
 
-_Folder structure of this module loosely follows [the Angular style guid](https://angular.io/guide/styleguide)._
+_Folder structure of this module loosely follows [the Angular style guide](https://angular.io/guide/styleguide)._
 
 ### Components
 

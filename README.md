@@ -9,6 +9,7 @@ Please know that this project follows [Angular style guid](https://angular.io/gu
 This project utilized Angular feature modules to help separate codes related to different features in their own area (each module also utilized lazy loading to decrease load time):
 
 - [Complex Forms Module](./additional-documentation/samples/complex-forms.html): Demonstrate how to create a complex form the span across different components
+- [End-To-End Testing Module](./additional-documentation/samples/end-to-end-testing.html): Demonstrates how to perform end-to-end testing on an Angular application using Protractor
 - [Inputs And Outputs Module](./additional-documentation/samples/input-and-output.html): General guideline for using [inputs](https://angular.io/api/core/Input) and [outputs](https://angular.io/api/core/Output) for Angular components
 - [Internationalization Module](./additional-documentation/samples/i18n.html): Demonstrate how to use [ngx-translate](https://github.com/ngx-translate/core)
 - [RxJS Module](./additional-documentation/samples/rxjs.html): Demo the more common operators, and subjects; It does not cover everything within the RxJS library
@@ -28,7 +29,98 @@ On top of the configurations created by Angular CLI, we also require some additi
 
 ### VSCode Workspace Setting
 
-TODO:
+It is absolutely necessary for every Angular workspace to have launch and task configurations that allows for debugging `npm start`, `npm run test`, and `npm run e2e`. To create these configurations follow these steps:
+
+1. Navigate to the debugger tab with `Ctrl+Shift+D` or by clicking the debugger icon
+2. If a launch.json file doesn't already exists you should see a `create a launch.json file` link. Click that link, and wait until vscode gives you some options, then select one of them (it doesn't matter which one because we will be replacing the contents anyways).
+3. Copy the following json and replace the contents of the launch.json file with them
+   ```json
+   {
+     "version": "0.2.0",
+     "configurations": [
+       {
+         "name": "ng serve",
+         "type": "chrome",
+         "request": "launch",
+         "preLaunchTask": "npm: start",
+         "url": "http://localhost:4200/#",
+         "webRoot": "${workspaceFolder}",
+         "sourceMapPathOverrides": {
+           "webpack:/*": "${webRoot}/*",
+           "/./*": "${webRoot}/*",
+           "/src/*": "${webRoot}/*",
+           "/*": "*",
+           "/./~/*": "${webRoot}/node_modules/*"
+         }
+       },
+       {
+         "name": "ng test",
+         "type": "chrome",
+         "request": "launch",
+         "url": "http://localhost:9876/debug.html",
+         "webRoot": "${workspaceFolder}",
+         "sourceMaps": true,
+         "pathMapping": {
+           "/_karma_webpack_": "${workspaceFolder}"
+         },
+         "sourceMapPathOverrides": {
+           "webpack:/*": "${webRoot}/*",
+           "/./*": "${webRoot}/*",
+           "/src/*": "${webRoot}/*",
+           "/*": "*",
+           "/./~/*": "${webRoot}/node_modules/*"
+         }
+       },
+       {
+         "name": "ng e2e",
+         "type": "node",
+         "request": "launch",
+         "program": "${workspaceFolder}/node_modules/protractor/bin/protractor",
+         "protocol": "inspector",
+         "args": ["${workspaceFolder}/e2e/protractor.conf.js"]
+       }
+     ]
+   }
+   ```
+4. Create a task.json file in the same .vscode folder as your launch.json then copy and paste the following json into it
+   ```json
+   {
+     "version": "2.0.0",
+     "tasks": [
+       {
+         "type": "npm",
+         "script": "start",
+         "isBackground": true,
+         "presentation": {
+           "focus": true,
+           "panel": "dedicated"
+         },
+         "group": {
+           "kind": "build",
+           "isDefault": true
+         },
+         "problemMatcher": {
+           "owner": "typescript",
+           "source": "ts",
+           "applyTo": "closedDocuments",
+           "fileLocation": ["relative", "${cwd}"],
+           "pattern": "$tsc",
+           "background": {
+             "activeOnStart": true,
+             "beginsPattern": {
+               "regexp": "(.*?)"
+             },
+             "endsPattern": {
+               "regexp": "Compiled |Failed to compile."
+             }
+           }
+         }
+       }
+     ]
+   }
+   ```
+
+Once this is done you should see new configuration options in your debug tab that you can choose to run. The `ng serve` and `ng e2e` configurations will work the same as the `npm start` and `npm run e2e` commands. The `ng test` command however will require you to still run the `npm run test` command because it requires a test instance to attach to. The benefit you get from all of these configurations is that you can now add breakpoints to your code base to pause code execution. Allowing you to inspect the state of your application at a given point in time. This makes debugging much easier.
 
 ### VSCode Plugins
 
@@ -60,6 +152,21 @@ Since we need our code formatting to be the same for everyone, `.prettierrc` fil
 We expect each Angular project to contain `.gitignore` file and `.gitattributes` file to standardize our git configuration.
 
 _`.gitattributes` file should contain `* text=auto` to normalize line endings_
+
+### NPM Packages
+
+Besides the following packages:
+
+- dependency:
+  - angular material
+  - ngx-logger
+  - ngx-translate
+- dev dependency:
+  - compodoc
+  - spectator
+  - faker
+
+All packages need to be approved before added to the project.
 
 ## Angular Log Format
 

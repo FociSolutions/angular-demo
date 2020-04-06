@@ -1,32 +1,36 @@
 [
   {
-      "title": "Samples",
-      "file": "src/app/Samples.md",
-      "children": [
-          {
-              "title": "Complex Forms",
-              "file": "src/app/complex-form/README.md"
-          },
-          {
-              "title": "i18n",
-              "file": "src/app/i18n/README.md"
-          },
-          {
-              "title": "Input and Output",
-              "file": "src/app/input-and-output/README.md"
-          },
-          {
-            "title": "RxJs",
-            "file": "src/app/rxjs/README.md"
-          },
-          {
-            "title": "Unit Testing",
-            "file": "src/app/unit-test/README.md"
-          },
-          {
-            "title": "Web Storage",
-            "file": "src/app/web-storage/README.md"
-          }
-      ]
+    "title": "Samples",
+    "file": "src/app/Samples.md",
+    "children": [
+      {
+        "title": "Complex Forms",
+        "file": "src/app/complex-form/README.md"
+      },
+      {
+        "title": "End-To-End Testing",
+        "file": "src/app/e2e/README.md"
+      },
+      {
+        "title": "i18n",
+        "file": "src/app/i18n/README.md"
+      },
+      {
+        "title": "Input and Output",
+        "file": "src/app/input-and-output/README.md"
+      },
+      {
+        "title": "RxJs",
+        "file": "src/app/rxjs/README.md"
+      },
+      {
+        "title": "Unit Testing",
+        "file": "src/app/unit-test/README.md"
+      },
+      {
+        "title": "Web Storage",
+        "file": "src/app/web-storage/README.md"
+      }
+    ]
   }
 ]
