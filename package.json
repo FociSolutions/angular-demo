@@ -12,7 +12,8 @@
     "build:docs": "compodoc -d ./public -p ./tsconfig.json --theme Laravel  --includes .",
     "test:ci": "ng test --watch=false --code-coverage --source-map true",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e --dev-server-target",
+    "e2e:ci": "ng e2e"
   },
   "private": true,
   "dependencies": {
@@ -26,7 +27,6 @@
     "@angular/platform-browser": "~9.0.7",
     "@angular/platform-browser-dynamic": "~9.0.7",
     "@angular/router": "~9.0.7",
-    "@fluffy-spoon/substitute": "^1.117.0",
     "@ngx-translate/core": "^12.1.2",
     "@ngx-translate/http-loader": "^4.0.0",
     "@rxweb/reactive-form-validators": "^1.9.9-beta4",
@@ -41,6 +41,7 @@
     "@angular/compiler-cli": "~9.0.7",
     "@angular/language-service": "~9.0.7",
     "@compodoc/compodoc": "^1.1.11",
+    "@fluffy-spoon/substitute": "^1.117.0",
     "@ngneat/spectator": "^5.3.1",
     "@types/faker": "^4.1.11",
     "@types/jasmine": "~3.5.0",

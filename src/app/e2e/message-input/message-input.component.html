@@ -1,0 +1,7 @@
+<div class="container column">
+  <mat-form-field>
+    <label>Type Message</label>
+    <input class="message-input" matInput [formControl]="this.messageControl" />
+  </mat-form-field>
+  <button mat-flat-button class="send-button" color="primary" (click)="this.sendMessage()">Send</button>
+</div>

@@ -2,7 +2,7 @@
 
 This lazy loaded feature module is created to demonstrate how to add, update, delete, and get items using the [Web Storage Api](https://developer.mozilla.org/en-US/docs/Web/API/Web_Storage_API). This module demonstrates the use of both the `localStorage` and `sessionStorage`. It should be noted that these are not the only way to store data client side.
 
-_Folder structure of this module loosely follows [the Angular style guid](https://angular.io/guide/styleguide)._
+_Folder structure of this module loosely follows [the Angular style guide](https://angular.io/guide/styleguide)._
 
 ## Session Storage
 

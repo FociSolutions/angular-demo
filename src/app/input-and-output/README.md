@@ -4,6 +4,8 @@ The purpose of this module is to serve as a general guideline for using [inputs]
 
 _For more information on inputs and outputs see the [angular documentation on component interaction](https://angular.io/guide/component-interaction)._
 
+_Folder structure of this module loosely follows [the Angular style guide](https://angular.io/guide/styleguide)._
+
 ## Guidelines
 
 - Type your input/output if they aren't already implicitly typed.
@@ -13,6 +15,7 @@ _For more information on inputs and outputs see the [angular documentation on co
 - Avoid using inputs and outputs when you need components to interact through multiple levels within your applications hierarchy, or if you need to facilitate an interaction between sibling components. Instead consider using a service for communication.
   - Long chains of inputs and outputs gets confusing as your application hierarchy gets larger and poses a greater risk of introducing unexpected bugs when you modify a component within the chain.
   - For example: If I have a NotificationDisplayComponent that displays notification messages that can be triggered from anywhere in the application I could structure my application to propagate notifications up to a root component to store and send as a list to my NotificationDisplayComponent like so:
+
     ```
     [RootComponent] ---input----> [NotificationDisplayComponent]
           ^
@@ -20,12 +23,14 @@ _For more information on inputs and outputs see the [angular documentation on co
                                   ^
                                   |----output----[ChildComponent]
     ```
+
     but it would be better to create a service that components on any level could interact with and the NotificationDisplayComponent could listen to
+
     ```
       [NotificationDisplayComponent] <---notifications-- [service] <--send notification--- [AnyComponent]
     ```
-    
 - Use [setter functions](https://angular.io/guide/component-interaction#intercept-input-property-changes-with-a-setter) for intercepting values from an input when you only need to watch a single input at once. If you wish to execute code after changes occur in multiple inputs then you should use the [ngOnChanges life cycle hook](https://angular.io/guide/component-interaction#intercept-input-property-changes-with-ngonchanges). There is also an example of listening to multiple inputs within this module.
+
   - Example: you may have a component that wants to remove any white spaces at the start or end of a string input
     ```typescript
     trimmedInput: string = '';
@@ -47,4 +52,4 @@ This module contains 4 components:
 - `ParentComponent` is the root component that will be communicating to all other components using their inputs and outputs.
 - `TextInputComponent` is a component that takes user input through a text input html tag and emits that value through an `@Output` property.
 - `UppercaseTextComponent` is a component that takes text through an `@Input` and turns it into an uppercase format by intercepting the incoming value using a setter function.
-- `MultiInputExampleComponent` is a component has two number inputs and displays the sum and product of these values. However it only updates the product value if both numbers have changed during the same changed detection step (something that is much harder to achieve through setter functions and probably shouldn't be done with setter functions). This is to show how you can listen to all input changes using the ngOnChanges. 
+- `MultiInputExampleComponent` is a component has two number inputs and displays the sum and product of these values. However it only updates the product value if both numbers have changed during the same changed detection step (something that is much harder to achieve through setter functions and probably shouldn't be done with setter functions). This is to show how you can listen to all input changes using the ngOnChanges.
