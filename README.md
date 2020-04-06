@@ -2,11 +2,37 @@
 
 This project contains a collection of demo modules that showcase different techniques and features of Angular development and how to implement them.
 
-**Details for each demo modules can be found _[here](./additional-documentation/samples.html)_.**
+Please know that this project follows [Angular style guid](https://angular.io/guide/styleguide), and all of our future Angular application should follow [Angular style guid](https://angular.io/guide/styleguide).
 
-## Recommended VSCode Plugins
+## Feature Modules
 
-Since we prefer to use VSCode to implement our Angular application, the following are some VScode plugin recommendations to make the development process a little bit easier:
+This project utilized Angular feature modules to help separate codes related to different features in their own area (each module also utilized lazy loading to decrease load time):
+
+- [Complex Forms Module](./additional-documentation/samples/complex-forms.html): Demonstrate how to create a complex form the span across different components
+- [Inputs And Outputs Module](./additional-documentation/samples/input-and-output.html): General guideline for using [inputs](https://angular.io/api/core/Input) and [outputs](https://angular.io/api/core/Output) for Angular components
+- [Internationalization Module](./additional-documentation/samples/i18n.html): Demonstrate how to use [ngx-translate](https://github.com/ngx-translate/core)
+- [RxJS Module](./additional-documentation/samples/rxjs.html): Demo the more common operators, and subjects; It does not cover everything within the RxJS library
+- [Unit Testing Module](./additional-documentation/samples/unit-testing.html): Demonstrate what we are expecting when creating unit tests for different class types
+- [Web Storage Module](./additional-documentation/samples/web-storage.html): Demonstrate how to add, update, delete, and get items using the [Web Storage Api](https://developer.mozilla.org/en-US/docs/Web/API/Web_Storage_API)
+
+To learn more about feature module, please read:
+
+- What is feature module: https://angular.io/guide/feature-modules
+- Different module type: https://angular.io/guide/module-types
+- What is lazy loaded module: https://angular.io/guide/lazy-loading-ngmodules
+- What is shared module: https://angular.io/guide/sharing-ngmodules
+
+## Configurations
+
+On top of the configurations created by Angular CLI, we also require some additional configurations. This section will go over all the additional configurations expected to be in every future Angular project and on everyone's machine.
+
+### VSCode Workspace Setting
+
+TODO:
+
+### VSCode Plugins
+
+Since We expect everyone to utilize Visual Studio Code for Angular application development, the following are all the required VScode plugins:
 
 - Angular Essentials: `johnpapa.angular-essentials`
 - Prettier - Code formatter: `esbenp.prettier-vscode`
@@ -17,6 +43,23 @@ Since we prefer to use VSCode to implement our Angular application, the followin
 - GitLens — Git supercharged: `eamodio.gitlens`
 
 The list can also be found in `.vscode/extensions.json` of this solution, please copy `extensions.json` file to other Angular application's `.vscode` folder.
+
+### Prettier Setting
+
+Since we need our code formatting to be the same for everyone, `.prettierrc` file is expected to be present in each Angular project and the file should contain the following:
+
+```json
+{
+  "singleQuote": true,
+  "printWidth": 140
+}
+```
+
+### Git Configuration
+
+We expect each Angular project to contain `.gitignore` file and `.gitattributes` file to standardize our git configuration.
+
+_`.gitattributes` file should contain `* text=auto` to normalize line endings_
 
 ## Angular Log Format
 
