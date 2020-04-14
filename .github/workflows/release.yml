@@ -1,13 +1,15 @@
-name: Build and Test
+name: Deployment
 
 on:
   push:
-    branches-ignore:
+    branches:
       - 'master'
       - '1-github-action'
+    paths-ignore:
+      - 'docs/**'
 
 jobs:
-  build_and_test:
+  build:
     runs-on: ubuntu-18.04
     steps:
       - name: Checkout
@@ -23,8 +25,6 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: '12.x'
-      - name: Install dependencies
-        run: npm ci
       - name: Build
         run: npm run build:ci
       - name: Test
@@ -33,11 +33,27 @@ jobs:
         if: success()
         uses: actions/upload-artifact@v1
         with:
-          name: dist
+          name: deploy_dist
           path: dist
       - name: Archive code coverage result
         if: success()
         uses: actions/upload-artifact@v1
         with:
-          name: coverage
+          name: deploy_coverage
           path: coverage
+  deploy:
+    runs-on: ubuntu-18.04
+    needs: build
+    steps:
+      - name: Download build
+        uses: actions/download-artifact@v1
+        with:
+          name: deploy_dist
+      - name: Deploy to GitHub Pages
+        uses: JamesIves/github-pages-deploy-action@releases/v3
+        with:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          BASE_BRANCH: master
+          BRANCH: master
+          FOLDER: dist/angular-demo
+          TARGET_FOLDER: docs
