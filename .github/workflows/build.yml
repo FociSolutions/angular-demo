@@ -4,7 +4,6 @@ on:
   push:
     branches-ignore:
       - 'master'
-      - '1-github-action'
 
 jobs:
   build_and_test:
@@ -12,13 +11,6 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2
-      - name: Cache node modules
-        uses: actions/cache@v1
-        with:
-          path: ~/.npm
-          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
-          restore-keys: |
-            ${{ runner.os }}-node-
       - name: Use Node 12.x
         uses: actions/setup-node@v1
         with:

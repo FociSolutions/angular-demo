@@ -1,5 +1,7 @@
 # Angular Demo
 
+![Deployment](https://github.com/FociSolutions/angular-demo/workflows/Deployment/badge.svg)
+
 This project contains a collection of demo modules that showcase different techniques and features of Angular development and how to implement them.
 
 Please know that this project follows [Angular style guid](https://angular.io/guide/styleguide), and all of our future Angular application should follow [Angular style guid](https://angular.io/guide/styleguide).
