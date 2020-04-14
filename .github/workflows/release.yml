@@ -14,13 +14,6 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2
-      - name: Cache node modules
-        uses: actions/cache@v1
-        with:
-          path: ~/.npm
-          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
-          restore-keys: |
-            ${{ runner.os }}-node-
       - name: Use Node 12.x
         uses: actions/setup-node@v1
         with:
@@ -47,6 +40,8 @@ jobs:
     runs-on: ubuntu-18.04
     needs: build
     steps:
+      - name: Checkout
+        uses: actions/checkout@v1
       - name: Download build
         uses: actions/download-artifact@v1
         with:
@@ -55,7 +50,5 @@ jobs:
         uses: JamesIves/github-pages-deploy-action@releases/v3
         with:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          BASE_BRANCH: master
-          BRANCH: master
+          BRANCH: gh-pages
           FOLDER: dist/angular-demo
-          TARGET_FOLDER: docs
