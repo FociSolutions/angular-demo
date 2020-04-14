@@ -1,0 +1,10 @@
+{
+  "I18N": {
+    "TITLE": "Internationalization",
+    "SUBTITLE": "Current language: {{lang}}",
+    "BODY": "The dolphins had long known of the impending demolition of Earth and had made many attempts to alert mankind to the danger... The last ever dolphins message was misinterpreted as a surprisingly sophisticated attempt to do a double backward somersault through a hoop whilst whistling \"The Star-Spangled Banner\", but in fact the message was this: \"So Long, and Thanks for All the Fish.\"",
+    "BUTTONS": {
+      "LANGUAGE": "Français"
+    }
+  }
+}

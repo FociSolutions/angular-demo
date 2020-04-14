@@ -1,0 +1,10 @@
+{
+  "I18N": {
+    "TITLE": "Internationalization",
+    "SUBTITLE": "Current language: {{lang}}",
+    "BODY": "Les dauphins avaient depuis longtemps de la démolition imminente de la Terre et ont fait de nombreuses tentatives pour alerter l' humanité du danger... Le dernier dauphins jamais un message a été mal interprété comme une tentative étonnamment sophistiqué pour faire un double saut périlleux arrière à travers un cerceau tout en sifflant \"La Star-Spangled Banner\", mais en fait le message était le suivant: \"So long, et Merci pour tous les poissons\".",
+    "BUTTONS": {
+      "LANGUAGE": "English"
+    }
+  }
+}
