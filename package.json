@@ -8,7 +8,7 @@
     "build": "ng build",
     "test": "ng test",
     "test:docs": "compodoc -d ./public -p ./tsconfig.json --theme Laravel --coverageTest --coverageTestThresholdFail false  --includes .",
-    "build:ci": "ng build --prod --sourceMap=false",
+    "build:ci": "ng build --prod --sourceMap=false --base-href /angular-demo/",
     "build:docs": "compodoc -d ./public -p ./tsconfig.json --theme Laravel  --includes .",
     "test:ci": "ng test --watch=false --code-coverage --source-map true",
     "lint": "ng lint",
