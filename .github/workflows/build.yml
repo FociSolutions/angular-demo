@@ -1,4 +1,4 @@
-name: CI
+name: Build and Test
 
 on:
   push:
@@ -6,11 +6,18 @@ on:
       - 'master'
 
 jobs:
-  build:
+  build_and_test:
     runs-on: ubuntu-18.04
     steps:
       - name: Checkout
         uses: actions/checkout@v2
+      - name: Cache node modules
+        uses: actions/cache@v1
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
       - name: Use Node 12.x
         uses: actions/setup-node@v1
         with:
@@ -22,11 +29,13 @@ jobs:
       - name: Test
         run: npm run test:ci
       - name: Archive build
+        if: success()
         uses: actions/upload-artifact@v1
         with:
           name: dist
           path: dist
       - name: Archive code coverage result
+        if: success()
         uses: actions/upload-artifact@v1
         with:
           name: coverage
