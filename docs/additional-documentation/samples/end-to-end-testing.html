@@ -1,0 +1,196 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>angular-demo documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../../images/favicon.ico">
+	      <link rel="stylesheet" href="../../styles/style.css">
+        <link rel="stylesheet" href="../../styles/Laravel.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+            <a href="../../" class="navbar-brand">angular-demo documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content additional-page">
+                   <div class="content-data">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   
+
+
+
+
+<h2 id="e2e-module">E2E Module</h2>
+<p>This lazy loaded feature module is created to demonstrate how to perform end-to-end testing on angular applications using <a href="https://www.protractortest.org/">Protractor</a></p>
+<p><em>Folder structure of this module loosely follows <a href="https://angular.io/guide/styleguide">the Angular style guide</a>. and <a href="https://www.protractortest.org/#/style-guide">the Protractor style guide</a></em></p>
+<h2 id="instructions-to-run-the-e2e-tests">Instructions To Run The E2E Tests</h2>
+<p>Normally when angular creates the project for you it generates the following command in your package.json to run your end-to-end tests, <code>ng e2e</code>. However when this command is run you will have to wait for the for your application to build and serve before the end-to-end tests can run. This build step really slows down end-to-end testing. That is why, in this module we have modified the command to be <code>ng e2e --dev-server-target</code>. This will cause the end-to-end test runner to use an already built and served instance of the application to run the tests against. However this also means you must have an instance of the application running to execute this command. So the steps to run the tests in the module are:</p>
+<ol>
+<li>Run the command <code>npm start</code> to start an instance of the application</li>
+<li>Run the command <code>npm run e2e</code> in another terminal to start your end-to-end tests.</li>
+</ol>
+<p>This changes allows us to run multiple end-to-end test quicker.</p>
+<h2 id="protractor">Protractor</h2>
+<p>Protractor is an end-to-end framework for Angular and AngularJS applications. Protractor runs tests against your application running in a real browser mimicking a real user. Protractor is automatically installed when creating angular applications with the <code>ng create</code> command. If for some reason Protractor is not installed please see <a href="https://www.protractortest.org/#/">the Protractor website</a> for more information.</p>
+<p>Here are some things to keep in mind when writing end-to-end tests with Protractor:</p>
+<ul>
+<li><p>Use Page Objects to interact with a page under test.</p>
+<ul>
+<li>Page Objects are models of your application UI that your tests interact with. They provide functions that your test suites can use to perform actions or observe changes in your UI. It can also expose properties that reference elements of this UI.<ul>
+<li>For example: We may have a view with a button that when clicked it opens a popup containing a certain message. In order to perform an end-to-end test of this we could create a Page Object for this view and create two functions. One would be responsible for clicking the button and the other one would be responsible for returning the message displayed in the popup. Our Page Object could also expose the popup element as a property so our test suite can check to see if the popup has been displayed after clicking the button.</li>
+<li>This module contains a similar example as the one described above</li>
+</ul>
+</li>
+<li>We do this because Page Objects are reusable, and help decouple the test logic from implementation details. This way if the implementation changes we should only have to update our Page Objects and not our test files that use them.</li>
+</ul>
+</li>
+<li><p>Do not using expect() in Page Objects</p>
+<ul>
+<li>It&#39;s not the responsibility of our Page Objects to make assertions. That logic should only be done within our test suites.</li>
+</ul>
+</li>
+<li><p>Due to Angular we don&#39;t have access to the following locator strategies:</p>
+<ul>
+<li><code>by.model()</code></li>
+<li><code>by.binding()</code></li>
+<li><code>by.repeater()</code></li>
+</ul>
+</li>
+<li><p>Prefer using <code>$</code> and <code>$$</code> locators.</p>
+<ul>
+<li><code>$</code> is used to select a single elements using css and is a synchronous operation</li>
+<li><code>$$</code> is used to select multiple elements using css and is a asynchronous operation</li>
+</ul>
+</li>
+<li><p>Don&#39;t use the <code>xpath</code> locator strategy</p>
+<ul>
+<li>This is a very strong rule created by the Protractor team and should be followed at all times.</li>
+</ul>
+</li>
+<li><p>Remember to always navigate to the page under test before testing</p>
+<ul>
+<li><p>Example:</p>
+<div><pre class="line-numbers"><code class="language-typescript">describe(&#39;...&#39;, () =&gt; {
+  beforeAll(() =&gt; {
+    page = new Page();
+    page.navigateTo(); // a navigation function implemented in the Page Object
+  });
+
+  //Test Suite Code....
+});</code></pre></div></li>
+</ul>
+</li>
+<li><p>Use the Jasmine setup and tear down callbacks (example: <code>beforeEach()</code>) to setup test scenarios and perform any cleanup to prevent your end-to-end tests from polluting each other.</p>
+<ul>
+<li>example: If you have an input you should probably make sure that it is cleared before using it again to ensure you don&#39;t just concatenate onto the previous input value. Unless this is the behavior you are trying to achieve.</li>
+</ul>
+</li>
+<li><p>All actions performed on an element are asynchronous. Actions are things such as clicking a button or checking to see if a certain element has been displayed.</p>
+<ul>
+<li><p>For more information on actions take a look at <a href="http://www.protractortest.org/#/api?view=webdriver.WebElement">the functions listed under the protractor documentation on WebElement</a> or this <a href="https://gist.github.com/javierarques/0c4c817d6c77b0877fda">protractor api cheat sheet</a></p>
+</li>
+<li><p>example:</p>
+<div><pre class="line-numbers"><code class="language-typescript">const el = $(&#39;.myClass&#39;);
+// A click action that returns a Promise&lt;void&gt;
+el.click().then(() =&gt; console.log(&#39;click action complete&#39;));
+
+el.sendKeys(&#39;some text&#39;);
+
+// Returns a Promise&lt;boolean&gt;
+el.isDisplayed().then((result) =&gt; console.log(&#39;el is displayed: &#39;, result));</code></pre></div></li>
+</ul>
+</li>
+</ul>
+<h3 id="components">Components</h3>
+<p>This module contains 4 components:</p>
+<ul>
+<li><code>E2eComponent</code> is the parent component for the MessageInputComponent and the MessageListComponent. Its only purpose is to render these two components in a 2 column layout</li>
+<li><code>DeleteDialogComponent</code> is the component that renders when the delete dialog is opened. It acts as a confirmation dialog for deleting a message from the list</li>
+<li><code>MessageInputComponent</code> is the component that contains the input elements for submitting a new message. It is dependent on the <code>MessageService</code>, using it to send to messages to any components listening to the services observable</li>
+<li><code>MessageListComponent</code> is the component responsible for displaying the messages emitted by the <code>MessageService</code>. It listens to the services observable and stores the incoming messages into an array which are then rendered by its template. Its also responsible for opening the delete dialog when a user clicks on the delete dialog and removing the message from the message list when the user clicks confirm on the delete dialog.</li>
+</ul>
+<h3 id="services">Services</h3>
+<p>There is one service contained in this module:</p>
+<ul>
+<li><code>MessageService</code> is the service responsible emitting message strings to any component listening to its observable. It contains a function that can be used to send a new message string through its observable.</li>
+</ul>
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> result-matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 2;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'additional-page';
+            var COMPODOC_CURRENT_PAGE_URL = 'end-to-end-testing.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script src="../../js/libs/custom-elements.min.js"></script>
+       <script src="../../js/libs/lit-html.js"></script>
+       <!-- Required to polyfill modern browsers as code is ES5 for IE... -->
+       <script src="../../js/libs/custom-elements-es5-adapter.js" charset="utf-8" defer></script>
+       <script src="../../js/menu-wc.js" defer></script>
+
+       <script src="../../js/libs/bootstrap-native.js"></script>
+
+       <script src="../../js/libs/es6-shim.min.js"></script>
+       <script src="../../js/libs/EventDispatcher.js"></script>
+       <script src="../../js/libs/promise.min.js"></script>
+       <script src="../../js/libs/zepto.min.js"></script>
+
+       <script src="../../js/compodoc.js"></script>
+
+       <script src="../../js/tabs.js"></script>
+       <script src="../../js/menu.js"></script>
+       <script src="../../js/libs/clipboard.min.js"></script>
+       <script src="../../js/libs/prism.js"></script>
+       <script src="../../js/sourceCode.js"></script>
+          <script src="../../js/search/search.js"></script>
+          <script src="../../js/search/lunr.min.js"></script>
+          <script src="../../js/search/search-lunr.js"></script>
+          <script src="../../js/search/search_index.js"></script>
+       <script src="../../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

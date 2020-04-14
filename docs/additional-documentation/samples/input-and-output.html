@@ -1,0 +1,156 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>angular-demo documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../../images/favicon.ico">
+	      <link rel="stylesheet" href="../../styles/style.css">
+        <link rel="stylesheet" href="../../styles/Laravel.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+            <a href="../../" class="navbar-brand">angular-demo documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content additional-page">
+                   <div class="content-data">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   
+
+
+
+
+<h1 id="inputs-and-outputs">Inputs and Outputs</h1>
+<p>The purpose of this module is to serve as a general guideline for using <a href="https://angular.io/api/core/Input">inputs</a> and <a href="https://angular.io/api/core/Output">outputs</a> for Angular components and provide some examples using Inputs and Outputs. Inputs and outputs are one of the ways components are able to interact with other components. There are other ways such as using the ViewChild decorator to directly interact with a child component, but this couples the components and makes reusing a component difficult. So it is recommended to use inputs and outputs, or services for component communication.</p>
+<p><em>For more information on inputs and outputs see the <a href="https://angular.io/guide/component-interaction">angular documentation on component interaction</a>.</em></p>
+<p><em>Folder structure of this module loosely follows <a href="https://angular.io/guide/styleguide">the Angular style guide</a>.</em></p>
+<h2 id="guidelines">Guidelines</h2>
+<ul>
+<li><p>Type your input/output if they aren&#39;t already implicitly typed.</p>
+<ul>
+<li>Example: <code>@Input() myInput: string</code>.</li>
+<li>This is especially useful with the release of Angular 9 since the ivy compiler can perform ahead of time checks on the types of the data you bind to your input and output</li>
+</ul>
+</li>
+<li><p>Use the <code>@Input</code> and <code>@Output</code> decorator instead of declaring them within the <code>@Component</code> decorator.</p>
+</li>
+<li><p>Avoid using inputs and outputs when you need components to interact through multiple levels within your applications hierarchy, or if you need to facilitate an interaction between sibling components. Instead consider using a service for communication.</p>
+<ul>
+<li><p>Long chains of inputs and outputs gets confusing as your application hierarchy gets larger and poses a greater risk of introducing unexpected bugs when you modify a component within the chain.</p>
+</li>
+<li><p>For example: If I have a NotificationDisplayComponent that displays notification messages that can be triggered from anywhere in the application I could structure my application to propagate notifications up to a root component to store and send as a list to my NotificationDisplayComponent like so:</p>
+<div><pre class="line-numbers"><code class="language-none">[RootComponent] ---input----&gt; [NotificationDisplayComponent]
+      ^
+      |---- output ----- [ChildComponent]
+                              ^
+                              |----output----[ChildComponent]</code></pre></div><p>but it would be better to create a service that components on any level could interact with and the NotificationDisplayComponent could listen to</p>
+<div><pre class="line-numbers"><code class="language-none">  [NotificationDisplayComponent] &lt;---notifications-- [service] &lt;--send notification--- [AnyComponent]</code></pre></div></li>
+</ul>
+</li>
+<li><p>Use <a href="https://angular.io/guide/component-interaction#intercept-input-property-changes-with-a-setter">setter functions</a> for intercepting values from an input when you only need to watch a single input at once. If you wish to execute code after changes occur in multiple inputs then you should use the <a href="https://angular.io/guide/component-interaction#intercept-input-property-changes-with-ngonchanges">ngOnChanges life cycle hook</a>. There is also an example of listening to multiple inputs within this module.</p>
+<ul>
+<li>Example: you may have a component that wants to remove any white spaces at the start or end of a string input<div><pre class="line-numbers"><code class="language-typescript">trimmedInput: string = &#39;&#39;;
+&#64;Input()
+set myInput(input: string) {
+  this.trimmedInput = input.trim();
+}</code></pre></div></li>
+</ul>
+</li>
+<li><p>Avoid aliasing them. Example: instead of <code>@Input(&#39;myInput&#39;) input: string</code> do <code>@Input() myInput: string</code>.</p>
+</li>
+<li><p>Avoid prefixing your outputs with <code>on</code>. Angular automatically provides an alternative accessor for outputs prefixed with <code>on-</code> so if you were to name an output <code>onClick</code> you would also get an alias <code>on-onClick</code>. This is a minor guideline but is recommended to avoid by the Angular team.</p>
+</li>
+<li><p>Avoid creating an output that emits EventEmitters. It can cause memory leaks if you forget to clean up your subscriptions to the previously emitted EventEmitters.</p>
+<ul>
+<li>Example: <code>@Output() output: EventEmitter&lt;EventEmitter&lt;string&gt;&gt; // don&#39;t do this</code></li>
+</ul>
+</li>
+</ul>
+<h2 id="components">Components</h2>
+<p>This module contains 4 components:</p>
+<ul>
+<li><code>ParentComponent</code> is the root component that will be communicating to all other components using their inputs and outputs.</li>
+<li><code>TextInputComponent</code> is a component that takes user input through a text input html tag and emits that value through an <code>@Output</code> property.</li>
+<li><code>UppercaseTextComponent</code> is a component that takes text through an <code>@Input</code> and turns it into an uppercase format by intercepting the incoming value using a setter function.</li>
+<li><code>MultiInputExampleComponent</code> is a component has two number inputs and displays the sum and product of these values. However it only updates the product value if both numbers have changed during the same changed detection step (something that is much harder to achieve through setter functions and probably shouldn&#39;t be done with setter functions). This is to show how you can listen to all input changes using the ngOnChanges.</li>
+</ul>
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> result-matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 2;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'additional-page';
+            var COMPODOC_CURRENT_PAGE_URL = 'input-and-output.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script src="../../js/libs/custom-elements.min.js"></script>
+       <script src="../../js/libs/lit-html.js"></script>
+       <!-- Required to polyfill modern browsers as code is ES5 for IE... -->
+       <script src="../../js/libs/custom-elements-es5-adapter.js" charset="utf-8" defer></script>
+       <script src="../../js/menu-wc.js" defer></script>
+
+       <script src="../../js/libs/bootstrap-native.js"></script>
+
+       <script src="../../js/libs/es6-shim.min.js"></script>
+       <script src="../../js/libs/EventDispatcher.js"></script>
+       <script src="../../js/libs/promise.min.js"></script>
+       <script src="../../js/libs/zepto.min.js"></script>
+
+       <script src="../../js/compodoc.js"></script>
+
+       <script src="../../js/tabs.js"></script>
+       <script src="../../js/menu.js"></script>
+       <script src="../../js/libs/clipboard.min.js"></script>
+       <script src="../../js/libs/prism.js"></script>
+       <script src="../../js/sourceCode.js"></script>
+          <script src="../../js/search/search.js"></script>
+          <script src="../../js/search/lunr.min.js"></script>
+          <script src="../../js/search/search-lunr.js"></script>
+          <script src="../../js/search/search_index.js"></script>
+       <script src="../../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

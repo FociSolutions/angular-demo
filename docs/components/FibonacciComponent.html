@@ -1,0 +1,933 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>angular-demo documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	      <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/Laravel.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+            <a href="../" class="navbar-brand">angular-demo documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li>Components</li>
+  <li>FibonacciComponent</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li >
+            <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li >
+            <a href="#templateData" role="tab" id="templateData-tab" data-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li >
+            <a href="#styleData" role="tab" id="styleData-tab" data-toggle="tab" data-link="style">Styles</a>
+        </li>
+        <li >
+            <a href="#tree" role="tab" id="tree-tab" data-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="c-info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>src/app/rxjs/fibonacci/fibonacci.component.ts</code>
+</p>
+
+    <p class="comment">
+        <h3>Description</h3>
+    </p>
+    <p class="comment">
+        <p>The FibonacciComponent holds information on the current number the user is currently viewing. It takes
+input from the user and makes function calls to the fibonacci service that will change this number, thus modifying
+the view.</p>
+
+    </p>
+
+
+    <p class="comment">
+        <h3>Implements</h3>
+    </p>
+    <p class="comment">
+                    <code><a href="https://angular.io/api/core/OnInit" target="_blank" >OnInit</a></code>
+    </p>
+
+
+<section>
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover">
+        <tbody>
+
+
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>app-fibonacci</code></td>
+            </tr>
+
+            <tr>
+                <td class="col-md-3">styleUrls</td>
+                <td class="col-md-9"><code>./fibonacci.component.scss</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./fibonacci.component.html</code></td>
+            </tr>
+
+
+
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#n">n</a>
+                            </li>
+                            <li>
+                                <a href="#nFib">nFib</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#getNth">getNth</a>
+                            </li>
+                            <li>
+                                <a href="#nextX">nextX</a>
+                            </li>
+                            <li>
+                                <a href="#ngOnInit">ngOnInit</a>
+                            </li>
+                            <li>
+                                <a href="#previousX">previousX</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <h6><b>Accessors</b></h6>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <ul class="index-list">
+                                <li>
+                                    <a href="#even">even</a>
+                                </li>
+                                <li>
+                                    <a href="#odd">odd</a>
+                                </li>
+                            </ul>
+                        </td>
+                    </tr>
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(fibonacci: <a href="../injectables/FibonacciService.html">FibonacciService</a>, logger: NGXLogger)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="20" class="link-to-prism">src/app/rxjs/fibonacci/fibonacci.component.ts:20</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>fibonacci</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/FibonacciService.html" target="_self" >FibonacciService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>logger</td>
+                                                  
+                                                        <td>
+                                                                    <code>NGXLogger</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+
+
+
+
+    <section>
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getNth"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Private</span>
+                            getNth
+                        </b>
+                        <a href="#getNth"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>getNth()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="65"
+                            class="link-to-prism">src/app/rxjs/fibonacci/fibonacci.component.ts:65</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Gets the Nth fibonacci number from our sequence. If the nth number has not been generated it does nothing.
+Function was made to avoid duplicating code in previous and next</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="nextX"></a>
+                    <span class="name">
+                        <b>
+                            nextX
+                        </b>
+                        <a href="#nextX"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>nextX(x: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="31"
+                            class="link-to-prism">src/app/rxjs/fibonacci/fibonacci.component.ts:31</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Adds x to the n variable and attempts to retrieve that fibonacci number</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>x</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngOnInit"></a>
+                    <span class="name">
+                        <b>
+                            ngOnInit
+                        </b>
+                        <a href="#ngOnInit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>ngOnInit()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="24"
+                            class="link-to-prism">src/app/rxjs/fibonacci/fibonacci.component.ts:24</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="previousX"></a>
+                    <span class="name">
+                        <b>
+                            previousX
+                        </b>
+                        <a href="#previousX"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>previousX(x: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="40"
+                            class="link-to-prism">src/app/rxjs/fibonacci/fibonacci.component.ts:40</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Goes back a number of steps from the current number. If we attempt to go past the zero indexed number we stop there.</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                    <td>Description</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>x</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <p>The number of steps to go back from the current number</p>
+
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+    <section>
+    
+        <h3 id="inputs">
+            Properties
+        </h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="n"></a>
+                        <span class="name">
+                            <b>
+                            n</b>
+                            <a href="#n"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>0</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="20" class="link-to-prism">src/app/rxjs/fibonacci/fibonacci.component.ts:20</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="nFib"></a>
+                        <span class="name">
+                            <b>
+                            nFib</b>
+                            <a href="#nFib"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="18" class="link-to-prism">src/app/rxjs/fibonacci/fibonacci.component.ts:18</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+</section>
+
+    <section>
+    <h3 id="accessors">
+        Accessors
+    </h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="even"></a>
+                        <span class="name"><b>even</b><a href="#even"><span class="icon ion-ios-link"></span></a></span>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <span class="accessor"><b>get</b><code>even()</code></span>
+                    </td>
+                </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="49" class="link-to-prism">src/app/rxjs/fibonacci/fibonacci.component.ts:49</a></div>
+                                </td>
+                            </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-description"><p>Returns an observable that results in a list of all the even fibonacci numbers that have been generated.</p>
+</div>
+
+                                <div class="io-description">
+                                    <b>Returns : </b>    <code>Observable&lt;[] | unknown&gt;</code>
+
+                                </div>
+                        </td>
+                    </tr>
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="odd"></a>
+                        <span class="name"><b>odd</b><a href="#odd"><span class="icon ion-ios-link"></span></a></span>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <span class="accessor"><b>get</b><code>odd()</code></span>
+                    </td>
+                </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="57" class="link-to-prism">src/app/rxjs/fibonacci/fibonacci.component.ts:57</a></div>
+                                </td>
+                            </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-description"><p>Returns an observable that results in a list of all the odd fibonacci numbers that have been generated.</p>
+</div>
+
+                                <div class="io-description">
+                                    <b>Returns : </b>    <code>Observable&lt;[] | unknown&gt;</code>
+
+                                </div>
+                        </td>
+                    </tr>
+
+            </tbody>
+        </table>
+</section>
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="c-source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, OnInit, OnDestroy } from &#x27;@angular/core&#x27;;
+import { Subscription, Observable, EMPTY } from &#x27;rxjs&#x27;;
+import { FibonacciService } from &#x27;../shared/services/fibonacci/fibonacci.service&#x27;;
+import { NGXLogger } from &#x27;ngx-logger&#x27;;
+
+/**
+ * The FibonacciComponent holds information on the current number the user is currently viewing. It takes
+ * input from the user and makes function calls to the fibonacci service that will change this number, thus modifying
+ * the view.
+ */
+@Component({
+  selector: &#x27;app-fibonacci&#x27;,
+  templateUrl: &#x27;./fibonacci.component.html&#x27;,
+  styleUrls: [&#x27;./fibonacci.component.scss&#x27;]
+})
+export class FibonacciComponent implements OnInit {
+  // The fibonacci number the user is currently viewing
+  nFib: number;
+  // The index of the fibonacci number the user is currently viewing
+  n &#x3D; 0;
+
+  constructor(private fibonacci: FibonacciService, private logger: NGXLogger) {}
+
+  ngOnInit(): void {
+    this.getNth();
+  }
+
+  /**
+   * Adds x to the n variable and attempts to retrieve that fibonacci number
+   */
+  nextX(x: number): void {
+    this.n +&#x3D; x;
+    this.getNth();
+  }
+
+  /**
+   * Goes back a number of steps from the current number. If we attempt to go past the zero indexed number we stop there.
+   * @param x The number of steps to go back from the current number
+   */
+  previousX(x: number): void {
+    this.n &#x3D; Math.max(this.n - x, 0);
+    this.getNth();
+  }
+
+  /**
+   * Returns an observable that results in a list of all the even fibonacci numbers that have been generated.
+   */
+  /* istanbul ignore next */
+  get even(): Observable&lt;number[] | unknown&gt; {
+    return this.fibonacci.even;
+  }
+
+  /**
+   * Returns an observable that results in a list of all the odd fibonacci numbers that have been generated.
+   */
+  /* istanbul ignore next */
+  get odd(): Observable&lt;number[] | unknown&gt; {
+    return this.fibonacci.odd;
+  }
+
+  /**
+   * Gets the Nth fibonacci number from our sequence. If the nth number has not been generated it does nothing.
+   * Function was made to avoid duplicating code in previous and next
+   */
+  private getNth() {
+    this.fibonacci.getNth(this.n).subscribe(
+      num &#x3D;&gt; {
+        this.nFib &#x3D; num;
+      },
+      err &#x3D;&gt; {
+        this.logger.warn(&#x27;RxjsModule.FibonacciComponent.previous: Error has occured: &#x27;, err);
+      }
+    );
+  }
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-templateData">
+        <pre class="line-numbers"><code class="language-html">&lt;div class&#x3D;&quot;container column&quot;&gt;
+  &lt;h1 class&#x3D;&quot;title&quot;&gt;Fibonacci Numbers&lt;/h1&gt;
+  &lt;div class&#x3D;&quot;row&quot;&gt;
+    &lt;div class&#x3D;&quot;column&quot; [style.flex]&#x3D;&quot;2&quot;&gt;
+      &lt;div class&#x3D;&quot;row fib-number-div&quot;&gt;
+        &lt;button mat-icon-button color&#x3D;&quot;primary&quot; (click)&#x3D;&quot;this.previousX(1)&quot;&gt;
+          &lt;mat-icon [inline]&#x3D;&quot;true&quot;&gt;chevron_left&lt;/mat-icon&gt;
+        &lt;/button&gt;
+        &lt;span class&#x3D;&quot;fib-number&quot;&gt;{{ this.nFib }}&lt;/span&gt;
+        &lt;button mat-icon-button color&#x3D;&quot;primary&quot; (click)&#x3D;&quot;this.nextX(1)&quot;&gt;
+          &lt;mat-icon [inline]&#x3D;&quot;true&quot;&gt;chevron_right&lt;/mat-icon&gt;
+        &lt;/button&gt;
+      &lt;/div&gt;
+      &lt;div class&#x3D;&quot;column control-div&quot;&gt;
+        &lt;div class&#x3D;&quot;row skip-controls-div&quot;&gt;
+          &lt;button mat-flat-button color&#x3D;&quot;primary&quot; (click)&#x3D;&quot;this.previousX(5)&quot;&gt;Go Back 5&lt;/button&gt;
+          &lt;button mat-flat-button color&#x3D;&quot;primary&quot; (click)&#x3D;&quot;this.nextX(5)&quot;&gt;Go Forward 5&lt;/button&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+      &lt;div class&#x3D;&quot;column even-odd-filtering&quot;&gt;
+        &lt;div class&#x3D;&quot;row even-numbers&quot;&gt;
+          &lt;h2&gt;Even Fibnonacci Numbers:&lt;/h2&gt;
+          &lt;p&gt;
+            &lt;span *ngFor&#x3D;&quot;let num of this.even | async&quot;&gt;{{ num }},&lt;/span&gt;
+          &lt;/p&gt;
+        &lt;/div&gt;
+        &lt;div class&#x3D;&quot;row odd-numbers&quot;&gt;
+          &lt;h2&gt;Odd Fibonacci Numbers:&lt;/h2&gt;
+          &lt;p&gt;
+            &lt;span *ngFor&#x3D;&quot;let num of this.odd | async&quot;&gt;{{ num }},&lt;/span&gt;
+          &lt;/p&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;app-sequence-list [style.flex]&#x3D;&quot;1&quot;&gt;&lt;/app-sequence-list&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-styleData">
+                <p class="comment">
+                    <code>./fibonacci.component.scss</code>
+                </p>
+                <pre class="line-numbers"><code class="language-scss">.container {
+  padding-top: 1em;
+  width: 100%;
+
+  .title {
+    align-self: center;
+  }
+
+  .fib-number-div {
+    margin-top: 1em;
+    align-items: center;
+    justify-content: space-between;
+    .fib-number {
+      font-size: 2em;
+    }
+    button {
+      width: 4em;
+      height: 4em;
+
+      mat-icon {
+        font-size: 4em;
+      }
+    }
+  }
+
+  .control-div {
+    .skip-controls-div {
+      justify-content: space-between;
+      margin-top: 1em;
+    }
+  }
+
+  app-sequence-list {
+    margin-top: 1em;
+  }
+
+  .control-div,
+  .fib-number-div {
+    width: 25vw;
+    align-self: center;
+  }
+
+  .even-odd-filtering {
+    margin-top: 1em;
+    margin-left: 1em;
+
+    .even-numbers,
+    .odd-numbers {
+      align-items: center;
+
+      h2 {
+        margin-right: 0.5em;
+        white-space: nowrap;
+      }
+      p {
+        font-size: 1.5em;
+        word-break: break-all;
+        line-height: 1.3em;
+
+        span {
+          margin-left: 0.25em;
+        }
+      }
+    }
+  }
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><div class="container column">  <h1 class="title">Fibonacci Numbers</h1>  <div class="row">    <div class="column" [style.flex]="2">      <div class="row fib-number-div">        <button mat-icon-button color="primary" (click)="this.previousX(1)">          <mat-icon [inline]="true">chevron_left</mat-icon>        </button>        <span class="fib-number">{{ this.nFib }}</span>        <button mat-icon-button color="primary" (click)="this.nextX(1)">          <mat-icon [inline]="true">chevron_right</mat-icon>        </button>      </div>      <div class="column control-div">        <div class="row skip-controls-div">          <button mat-flat-button color="primary" (click)="this.previousX(5)">Go Back 5</button>          <button mat-flat-button color="primary" (click)="this.nextX(5)">Go Forward 5</button>        </div>      </div>      <div class="column even-odd-filtering">        <div class="row even-numbers">          <h2>Even Fibnonacci Numbers:</h2>          <p>            <span *ngFor="let num of this.even | async">{{ num }},</span>          </p>        </div>        <div class="row odd-numbers">          <h2>Odd Fibonacci Numbers:</h2>          <p>            <span *ngFor="let num of this.odd | async">{{ num }},</span>          </p>        </div>      </div>    </div>    <app-sequence-list [style.flex]="1"></app-sequence-list>  </div></div></div>'
+    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'CombiningObservablesComponent', 'selector': 'app-combining-observables'},{'name': 'ComplexFormComponent', 'selector': 'app-complex-form'},{'name': 'ContentCardComponent', 'selector': 'app-content-card'},{'name': 'DashboardComponent', 'selector': 'app-dashboard'},{'name': 'DeleteDialogComponent', 'selector': 'app-delete-dialog'},{'name': 'E2eComponent', 'selector': 'app-e2e'},{'name': 'FibonacciComponent', 'selector': 'app-fibonacci'},{'name': 'I18nComponent', 'selector': 'app-i18n'},{'name': 'MessageInputComponent', 'selector': 'app-message-input'},{'name': 'MessageListComponent', 'selector': 'app-message-list'},{'name': 'MultiInputExampleComponent', 'selector': 'app-multi-input-example'},{'name': 'ParentComponent', 'selector': 'app-parent'},{'name': 'PlayerListComponent', 'selector': 'app-player-list'},{'name': 'PlayerListItemComponent', 'selector': 'app-player-list-item'},{'name': 'ResultComponent', 'selector': 'app-result'},{'name': 'SequenceListComponent', 'selector': 'app-sequence-list'},{'name': 'ShoppingCartComponent', 'selector': 'app-shopping-cart'},{'name': 'TeamNameInputComponent', 'selector': 'app-team-name-input'},{'name': 'TextInputComponent', 'selector': 'app-text-input'},{'name': 'UnitTestComponent', 'selector': 'app-unit-test'},{'name': 'UppercaseTextComponent', 'selector': 'app-uppercase-text'},{'name': 'WebStorageComponent', 'selector': 'app-storage'}];
+    var DIRECTIVES = [];
+    var ACTUAL_COMPONENT = {'name': 'FibonacciComponent'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+                   
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> result-matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'FibonacciComponent.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+       <!-- Required to polyfill modern browsers as code is ES5 for IE... -->
+       <script src="../js/libs/custom-elements-es5-adapter.js" charset="utf-8" defer></script>
+       <script src="../js/menu-wc.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

@@ -1,0 +1,1123 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>angular-demo documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	      <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/Laravel.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+            <a href="../" class="navbar-brand">angular-demo documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li>Components</li>
+  <li>WebStorageComponent</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li >
+            <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li >
+            <a href="#templateData" role="tab" id="templateData-tab" data-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li >
+            <a href="#styleData" role="tab" id="styleData-tab" data-toggle="tab" data-link="style">Styles</a>
+        </li>
+        <li >
+            <a href="#tree" role="tab" id="tree-tab" data-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="c-info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>src/app/web-storage/web-storage/web-storage.component.ts</code>
+</p>
+
+    <p class="comment">
+        <h3>Description</h3>
+    </p>
+    <p class="comment">
+        <p>This component takes input from the UI to update/delete/add items to the LocalStorage and SessionStorage
+using their respective services.</p>
+
+    </p>
+
+
+    <p class="comment">
+        <h3>Implements</h3>
+    </p>
+    <p class="comment">
+                    <code><a href="https://angular.io/api/core/OnInit" target="_blank" >OnInit</a></code>
+    </p>
+
+
+<section>
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover">
+        <tbody>
+
+
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>app-storage</code></td>
+            </tr>
+
+            <tr>
+                <td class="col-md-3">styleUrls</td>
+                <td class="col-md-9"><code>./web-storage.component.scss</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./web-storage.component.html</code></td>
+            </tr>
+
+
+
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#addInputKeyField">addInputKeyField</a>
+                            </li>
+                            <li>
+                                <a href="#addInputValueField">addInputValueField</a>
+                            </li>
+                            <li>
+                                <a href="#deleteInputKeyField">deleteInputKeyField</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#clearLocalStorage">clearLocalStorage</a>
+                            </li>
+                            <li>
+                                <a href="#clearSessionStorage">clearSessionStorage</a>
+                            </li>
+                            <li>
+                                <a href="#deleteItemFromLocalStorage">deleteItemFromLocalStorage</a>
+                            </li>
+                            <li>
+                                <a href="#deleteItemFromSessionStorage">deleteItemFromSessionStorage</a>
+                            </li>
+                            <li>
+                                <a href="#ngOnInit">ngOnInit</a>
+                            </li>
+                            <li>
+                                <a href="#updateLocalStorage">updateLocalStorage</a>
+                            </li>
+                            <li>
+                                <a href="#updateSessionStorage">updateSessionStorage</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <h6><b>Accessors</b></h6>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <ul class="index-list">
+                                <li>
+                                    <a href="#localStorageState">localStorageState</a>
+                                </li>
+                                <li>
+                                    <a href="#sessionStorageState">sessionStorageState</a>
+                                </li>
+                            </ul>
+                        </td>
+                    </tr>
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(localStorage: <a href="../injectables/LocalStorageService.html">LocalStorageService</a>, sessionStorage: <a href="../injectables/SessionStorageService.html">SessionStorageService</a>, logger: NGXLogger)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="24" class="link-to-prism">src/app/web-storage/web-storage/web-storage.component.ts:24</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>localStorage</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/LocalStorageService.html" target="_self" >LocalStorageService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>sessionStorage</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/SessionStorageService.html" target="_self" >SessionStorageService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>logger</td>
+                                                  
+                                                        <td>
+                                                                    <code>NGXLogger</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+
+
+
+
+    <section>
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="clearLocalStorage"></a>
+                    <span class="name">
+                        <b>
+                            clearLocalStorage
+                        </b>
+                        <a href="#clearLocalStorage"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>clearLocalStorage()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="120"
+                            class="link-to-prism">src/app/web-storage/web-storage/web-storage.component.ts:120</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Clears the local storage using the clear function in LocalStorageService</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="clearSessionStorage"></a>
+                    <span class="name">
+                        <b>
+                            clearSessionStorage
+                        </b>
+                        <a href="#clearSessionStorage"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>clearSessionStorage()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="128"
+                            class="link-to-prism">src/app/web-storage/web-storage/web-storage.component.ts:128</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Clears the session storage using the clear function in SessionStorageService</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="deleteItemFromLocalStorage"></a>
+                    <span class="name">
+                        <b>
+                            deleteItemFromLocalStorage
+                        </b>
+                        <a href="#deleteItemFromLocalStorage"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>deleteItemFromLocalStorage()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="138"
+                            class="link-to-prism">src/app/web-storage/web-storage/web-storage.component.ts:138</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Deletes an item from the local storage whose key matches the value in the deleteInputKeyField
+form control. If no such key exists in local storage this should do nothing. This function calls
+the deleteItem function in LocalStorageService</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="deleteItemFromSessionStorage"></a>
+                    <span class="name">
+                        <b>
+                            deleteItemFromSessionStorage
+                        </b>
+                        <a href="#deleteItemFromSessionStorage"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>deleteItemFromSessionStorage()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="148"
+                            class="link-to-prism">src/app/web-storage/web-storage/web-storage.component.ts:148</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Deletes an item from the session storage whose key matches the value in the deleteInputKeyField
+form control. If no such key exists in session storage this should do nothing. This function calls
+the deleteItem function in SessionStorageService</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngOnInit"></a>
+                    <span class="name">
+                        <b>
+                            ngOnInit
+                        </b>
+                        <a href="#ngOnInit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>ngOnInit()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="28"
+                            class="link-to-prism">src/app/web-storage/web-storage/web-storage.component.ts:28</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="updateLocalStorage"></a>
+                    <span class="name">
+                        <b>
+                            updateLocalStorage
+                        </b>
+                        <a href="#updateLocalStorage"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>updateLocalStorage()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="89"
+                            class="link-to-prism">src/app/web-storage/web-storage/web-storage.component.ts:89</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>If the addInputKeyField and addInputValueField controls are valid this function attempts
+to add/update the item in the local storage whose key matches the provided key. It does this
+by calling updateItem function in LocalStorageService</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="updateSessionStorage"></a>
+                    <span class="name">
+                        <b>
+                            updateSessionStorage
+                        </b>
+                        <a href="#updateSessionStorage"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>updateSessionStorage()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="105"
+                            class="link-to-prism">src/app/web-storage/web-storage/web-storage.component.ts:105</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>If the addInputKeyField and addInputValueField controls are valid this function attempts
+to add/update the item in the session storage whose key matches the provided key. It does this
+by calling updateItem function in SessionStorageService</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+    <section>
+    
+        <h3 id="inputs">
+            Properties
+        </h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="addInputKeyField"></a>
+                        <span class="name">
+                            <b>
+                            addInputKeyField</b>
+                            <a href="#addInputKeyField"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>new FormControl(&#x27;&#x27;, Validators.required)</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="20" class="link-to-prism">src/app/web-storage/web-storage/web-storage.component.ts:20</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="addInputValueField"></a>
+                        <span class="name">
+                            <b>
+                            addInputValueField</b>
+                            <a href="#addInputValueField"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>new FormControl(&#x27;&#x27;)</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="22" class="link-to-prism">src/app/web-storage/web-storage/web-storage.component.ts:22</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="deleteInputKeyField"></a>
+                        <span class="name">
+                            <b>
+                            deleteInputKeyField</b>
+                            <a href="#deleteInputKeyField"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>new FormControl(&#x27;&#x27;, Validators.required)</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="24" class="link-to-prism">src/app/web-storage/web-storage/web-storage.component.ts:24</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+</section>
+
+    <section>
+    <h3 id="accessors">
+        Accessors
+    </h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="localStorageState"></a>
+                        <span class="name"><b>localStorageState</b><a href="#localStorageState"><span class="icon ion-ios-link"></span></a></span>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <span class="accessor"><b>get</b><code>localStorageState()</code></span>
+                    </td>
+                </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="35" class="link-to-prism">src/app/web-storage/web-storage/web-storage.component.ts:35</a></div>
+                                </td>
+                            </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-description"><p>Returns an observable that results in an object. We are doing this so it can be processed by the Angular JSON pipe
+to be formatted for display</p>
+</div>
+
+                                <div>
+                                </div>
+                                <div class="io-description">
+                                    <b>Returns : </b>    <code>Observable&lt;any&gt;</code>
+
+                                </div>
+                        </td>
+                    </tr>
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="sessionStorageState"></a>
+                        <span class="name"><b>sessionStorageState</b><a href="#sessionStorageState"><span class="icon ion-ios-link"></span></a></span>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <span class="accessor"><b>get</b><code>sessionStorageState()</code></span>
+                    </td>
+                </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="62" class="link-to-prism">src/app/web-storage/web-storage/web-storage.component.ts:62</a></div>
+                                </td>
+                            </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-description"><p>Returns an observable that results in an object. We are doing this so it can be processed by the Angular JSON pipe
+to be formatted for display</p>
+</div>
+
+                                <div>
+                                </div>
+                                <div class="io-description">
+                                    <b>Returns : </b>    <code>Observable&lt;any&gt;</code>
+
+                                </div>
+                        </td>
+                    </tr>
+
+            </tbody>
+        </table>
+</section>
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="c-source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, OnInit } from &#x27;@angular/core&#x27;;
+import { LocalStorageService } from &#x27;../shared/services/local-storage/local-storage.service&#x27;;
+import { SessionStorageService } from &#x27;../shared/services/session-storage/session-storage.service&#x27;;
+import { Observable, of } from &#x27;rxjs&#x27;;
+import { map, catchError } from &#x27;rxjs/operators&#x27;;
+import { FormControl, Validators } from &#x27;@angular/forms&#x27;;
+import { NGXLogger } from &#x27;ngx-logger&#x27;;
+
+/**
+ * This component takes input from the UI to update/delete/add items to the LocalStorage and SessionStorage
+ * using their respective services.
+ */
+@Component({
+  selector: &#x27;app-storage&#x27;,
+  templateUrl: &#x27;./web-storage.component.html&#x27;,
+  styleUrls: [&#x27;./web-storage.component.scss&#x27;]
+})
+export class WebStorageComponent implements OnInit {
+  // The form control that will be used as the key when adding or editing an item entry in the storages
+  addInputKeyField &#x3D; new FormControl(&#x27;&#x27;, Validators.required);
+  // The form control that will be used as the value when adding or editing an item entry in the storages
+  addInputValueField &#x3D; new FormControl(&#x27;&#x27;);
+  // The form control that will be used as the key of the item to delete from the storages
+  deleteInputKeyField &#x3D; new FormControl(&#x27;&#x27;, Validators.required);
+
+  constructor(private localStorage: LocalStorageService, private sessionStorage: SessionStorageService, private logger: NGXLogger) {}
+
+  ngOnInit(): void {}
+
+  /**
+   *  Returns an observable that results in an object. We are doing this so it can be processed by the Angular JSON pipe
+   * to be formatted for display
+   * @returns An observable that results in a json object representing the current state of local storage
+   */
+  get localStorageState(): Observable&lt;any&gt; {
+    return this.localStorage.getAll().pipe(
+      map(pairs &#x3D;&gt; {
+        const obj &#x3D; {};
+        /**
+         * For each key value pair I am assigning a property with the property name equal to the key string to
+         * a value that is equal to the value string.
+         * For example, a key value pair list of [{&#x27;x&#x27;:&#x27;y&#x27;}] becomes {&#x27;x&#x27;:&#x27;y&#x27;}
+         */
+        for (const pair of pairs) {
+          obj[pair.key] &#x3D; pair.value;
+        }
+        return obj;
+      }),
+      catchError(err &#x3D;&gt; {
+        this.logger.warn(&#x27;WebStorageModule.WebStorageComponent.localStorageState: Unexpected error occurred &#x27;, err);
+        // return an empty object on error
+        return of({});
+      })
+    );
+  }
+
+  /**
+   * Returns an observable that results in an object. We are doing this so it can be processed by the Angular JSON pipe
+   * to be formatted for display
+   * @returns An observable that results in an object representing the current state of session storage
+   */
+  get sessionStorageState(): Observable&lt;any&gt; {
+    return this.sessionStorage.getAll().pipe(
+      map(pairs &#x3D;&gt; {
+        const obj &#x3D; {};
+        /**
+         * For each key value pair I am assigning a property with the property name equal to the key string to
+         * a value that is equal to the value string.
+         * For example, a key value pair list of [{&#x27;x&#x27;:&#x27;y&#x27;}] becomes {&#x27;x&#x27;:&#x27;y&#x27;}
+         */
+        for (const pair of pairs) {
+          obj[pair.key] &#x3D; pair.value;
+        }
+        return obj;
+      }),
+      catchError(err &#x3D;&gt; {
+        this.logger.warn(&#x27;WebStorageModule.WebStorageComponent.sessionStorageState: Unexpected error occurred &#x27;, err);
+        // return an empty object on error
+        return of({});
+      })
+    );
+  }
+
+  /**
+   * If the addInputKeyField and addInputValueField controls are valid this function attempts
+   * to add/update the item in the local storage whose key matches the provided key. It does this
+   * by calling updateItem function in LocalStorageService
+   */
+  updateLocalStorage() {
+    try {
+      if (this.addInputKeyField.valid &amp;&amp; this.addInputValueField.valid) {
+        this.localStorage.updateItem(this.addInputKeyField.value, this.addInputValueField.value);
+      }
+    } catch (error) {
+      this.logger.warn(&#x27;WebStorageModule.WebStorageComponent.updateLocalStorage: Error has occurred &#x27;, error);
+      alert(&#x27;Error occurred&#x27;);
+    }
+  }
+
+  /**
+   * If the addInputKeyField and addInputValueField controls are valid this function attempts
+   * to add/update the item in the session storage whose key matches the provided key. It does this
+   * by calling updateItem function in SessionStorageService
+   */
+  updateSessionStorage() {
+    try {
+      if (this.addInputKeyField.valid &amp;&amp; this.addInputValueField.valid) {
+        this.sessionStorage.updateItem(this.addInputKeyField.value, this.addInputValueField.value);
+      }
+    } catch (error) {
+      this.logger.warn(&#x27;WebStorageModule.WebStorageComponent.updateSessionStorage: Error has occurred &#x27;, error);
+      alert(&#x27;Error occurred&#x27;);
+    }
+  }
+
+  /**
+   * Clears the local storage using the clear function in LocalStorageService
+   */
+  /* istanbul ignore next */
+  clearLocalStorage() {
+    this.localStorage.clear();
+  }
+
+  /**
+   * Clears the session storage using the clear function in SessionStorageService
+   */
+  /* istanbul ignore next */
+  clearSessionStorage() {
+    this.sessionStorage.clear();
+  }
+
+  /**
+   * Deletes an item from the local storage whose key matches the value in the deleteInputKeyField
+   * form control. If no such key exists in local storage this should do nothing. This function calls
+   * the deleteItem function in LocalStorageService
+   */
+  /* istanbul ignore next */
+  deleteItemFromLocalStorage() {
+    this.localStorage.deleteItem(this.deleteInputKeyField.value);
+  }
+
+  /**
+   * Deletes an item from the session storage whose key matches the value in the deleteInputKeyField
+   * form control. If no such key exists in session storage this should do nothing. This function calls
+   * the deleteItem function in SessionStorageService
+   */
+  /* istanbul ignore next */
+  deleteItemFromSessionStorage() {
+    this.sessionStorage.deleteItem(this.deleteInputKeyField.value);
+  }
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-templateData">
+        <pre class="line-numbers"><code class="language-html">&lt;div class&#x3D;&quot;row container&quot;&gt;
+  &lt;div class&#x3D;&quot;column controls-div&quot;&gt;
+    &lt;div class&#x3D;&quot;column add-controls-div&quot;&gt;
+      &lt;h2&gt;Add/Update An Item&lt;/h2&gt;
+      &lt;mat-form-field&gt;
+        &lt;label&gt;Item Key&lt;/label&gt;
+        &lt;input [formControl]&#x3D;&quot;this.addInputKeyField&quot; matInput /&gt;
+        &lt;mat-error *ngIf&#x3D;&quot;this.addInputKeyField.hasError(&#x27;required&#x27;)&quot;&gt;Item key is required&lt;/mat-error&gt;
+      &lt;/mat-form-field&gt;
+      &lt;mat-form-field&gt;
+        &lt;label&gt;Item Value&lt;/label&gt;
+        &lt;input [formControl]&#x3D;&quot;this.addInputValueField&quot; matInput /&gt;
+      &lt;/mat-form-field&gt;
+      &lt;div class&#x3D;&quot;add-buttons-div row&quot;&gt;
+        &lt;button mat-flat-button color&#x3D;&quot;primary&quot; (click)&#x3D;&quot;this.updateSessionStorage()&quot; [disabled]&#x3D;&quot;this.addInputKeyField.invalid&quot;&gt;
+          Add To Session Storage
+        &lt;/button&gt;
+        &lt;button mat-flat-button color&#x3D;&quot;primary&quot; (click)&#x3D;&quot;this.updateLocalStorage()&quot; [disabled]&#x3D;&quot;this.addInputKeyField.invalid&quot;&gt;
+          Add To Local Storage
+        &lt;/button&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+
+    &lt;div class&#x3D;&quot;column delete-controls-div&quot;&gt;
+      &lt;h2&gt;Delete An Item&lt;/h2&gt;
+      &lt;mat-form-field&gt;
+        &lt;label&gt;Item Key&lt;/label&gt;
+        &lt;input [formControl]&#x3D;&quot;this.deleteInputKeyField&quot; matInput /&gt;
+        &lt;mat-error *ngIf&#x3D;&quot;this.deleteInputKeyField.hasError(&#x27;required&#x27;)&quot;&gt;Item key is required&lt;/mat-error&gt;
+      &lt;/mat-form-field&gt;
+      &lt;div class&#x3D;&quot;add-buttons-div row&quot;&gt;
+        &lt;button mat-flat-button color&#x3D;&quot;warn&quot; (click)&#x3D;&quot;this.deleteItemFromSessionStorage()&quot; [disabled]&#x3D;&quot;this.deleteInputKeyField.invalid&quot;&gt;
+          Delete From Session Storage
+        &lt;/button&gt;
+        &lt;button mat-flat-button color&#x3D;&quot;warn&quot; (click)&#x3D;&quot;this.deleteItemFromLocalStorage()&quot; [disabled]&#x3D;&quot;this.deleteInputKeyField.invalid&quot;&gt;
+          Delete From Local Storage
+        &lt;/button&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class&#x3D;&quot;column session-storage-div&quot;&gt;
+    &lt;div class&#x3D;&quot;row title&quot;&gt;
+      &lt;h2&gt;Session Storage State&lt;/h2&gt;
+      &lt;button mat-icon-button color&#x3D;&quot;warn&quot; (click)&#x3D;&quot;this.clearSessionStorage()&quot;&gt;&lt;mat-icon&gt;delete&lt;/mat-icon&gt;&lt;/button&gt;
+    &lt;/div&gt;
+    &lt;pre&gt;&lt;code&gt;{{this.sessionStorageState | async | json}}&lt;/code&gt;&lt;/pre&gt;
+  &lt;/div&gt;
+  &lt;div class&#x3D;&quot;column local-storage-div&quot;&gt;
+    &lt;div class&#x3D;&quot;row title&quot;&gt;
+      &lt;h2&gt;Local Storage State&lt;/h2&gt;
+      &lt;button mat-icon-button color&#x3D;&quot;warn&quot; (click)&#x3D;&quot;this.clearLocalStorage()&quot;&gt;&lt;mat-icon&gt;delete&lt;/mat-icon&gt;&lt;/button&gt;
+    &lt;/div&gt;
+    &lt;pre&gt;&lt;code&gt;{{this.localStorageState | async | json}}&lt;/code&gt;&lt;/pre&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-styleData">
+                <p class="comment">
+                    <code>./web-storage.component.scss</code>
+                </p>
+                <pre class="line-numbers"><code class="language-scss">.container {
+  padding: 1em;
+  width: calc(100%-2em);
+
+  .controls-div,
+  .local-storage-div,
+  .session-storage-div {
+    flex: 1;
+
+    .title {
+      align-items: center;
+
+      h2 {
+        margin-bottom: 0;
+        margin-right: 0.5em;
+      }
+    }
+  }
+
+  .controls-div {
+    align-items: start;
+    margin-right: 1em;
+
+    .add-controls-div,
+    .delete-controls-div {
+      border: 1pt solid rgba(0, 0, 0, 0.6);
+      border-radius: 1em;
+      margin-bottom: 1em;
+
+      h2 {
+        align-self: center;
+        margin-top: 1em;
+        margin-bottom: 0;
+      }
+    }
+
+    mat-form-field {
+      align-self: stretch;
+      margin: 1em 4em;
+      input {
+        margin-top: 0.5em;
+      }
+    }
+
+    button {
+      margin: 0 2em;
+    }
+
+    .add-buttons-div {
+      margin-bottom: 1em;
+      align-items: center;
+    }
+  }
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><div class="row container">  <div class="column controls-div">    <div class="column add-controls-div">      <h2>Add/Update An Item</h2>      <mat-form-field>        <label>Item Key</label>        <input [formControl]="this.addInputKeyField" matInput />        <mat-error *ngIf="this.addInputKeyField.hasError(\'required\')">Item key is required</mat-error>      </mat-form-field>      <mat-form-field>        <label>Item Value</label>        <input [formControl]="this.addInputValueField" matInput />      </mat-form-field>      <div class="add-buttons-div row">        <button mat-flat-button color="primary" (click)="this.updateSessionStorage()" [disabled]="this.addInputKeyField.invalid">          Add To Session Storage        </button>        <button mat-flat-button color="primary" (click)="this.updateLocalStorage()" [disabled]="this.addInputKeyField.invalid">          Add To Local Storage        </button>      </div>    </div>    <div class="column delete-controls-div">      <h2>Delete An Item</h2>      <mat-form-field>        <label>Item Key</label>        <input [formControl]="this.deleteInputKeyField" matInput />        <mat-error *ngIf="this.deleteInputKeyField.hasError(\'required\')">Item key is required</mat-error>      </mat-form-field>      <div class="add-buttons-div row">        <button mat-flat-button color="warn" (click)="this.deleteItemFromSessionStorage()" [disabled]="this.deleteInputKeyField.invalid">          Delete From Session Storage        </button>        <button mat-flat-button color="warn" (click)="this.deleteItemFromLocalStorage()" [disabled]="this.deleteInputKeyField.invalid">          Delete From Local Storage        </button>      </div>    </div>  </div>  <div class="column session-storage-div">    <div class="row title">      <h2>Session Storage State</h2>      <button mat-icon-button color="warn" (click)="this.clearSessionStorage()"><mat-icon>delete</mat-icon></button>    </div>    <pre><code>{{this.sessionStorageState | async | json}}</code></pre>  </div>  <div class="column local-storage-div">    <div class="row title">      <h2>Local Storage State</h2>      <button mat-icon-button color="warn" (click)="this.clearLocalStorage()"><mat-icon>delete</mat-icon></button>    </div>    <pre><code>{{this.localStorageState | async | json}}</code></pre>  </div></div></div>'
+    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'CombiningObservablesComponent', 'selector': 'app-combining-observables'},{'name': 'ComplexFormComponent', 'selector': 'app-complex-form'},{'name': 'ContentCardComponent', 'selector': 'app-content-card'},{'name': 'DashboardComponent', 'selector': 'app-dashboard'},{'name': 'DeleteDialogComponent', 'selector': 'app-delete-dialog'},{'name': 'E2eComponent', 'selector': 'app-e2e'},{'name': 'FibonacciComponent', 'selector': 'app-fibonacci'},{'name': 'I18nComponent', 'selector': 'app-i18n'},{'name': 'MessageInputComponent', 'selector': 'app-message-input'},{'name': 'MessageListComponent', 'selector': 'app-message-list'},{'name': 'MultiInputExampleComponent', 'selector': 'app-multi-input-example'},{'name': 'ParentComponent', 'selector': 'app-parent'},{'name': 'PlayerListComponent', 'selector': 'app-player-list'},{'name': 'PlayerListItemComponent', 'selector': 'app-player-list-item'},{'name': 'ResultComponent', 'selector': 'app-result'},{'name': 'SequenceListComponent', 'selector': 'app-sequence-list'},{'name': 'ShoppingCartComponent', 'selector': 'app-shopping-cart'},{'name': 'TeamNameInputComponent', 'selector': 'app-team-name-input'},{'name': 'TextInputComponent', 'selector': 'app-text-input'},{'name': 'UnitTestComponent', 'selector': 'app-unit-test'},{'name': 'UppercaseTextComponent', 'selector': 'app-uppercase-text'},{'name': 'WebStorageComponent', 'selector': 'app-storage'}];
+    var DIRECTIVES = [];
+    var ACTUAL_COMPONENT = {'name': 'WebStorageComponent'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+                   
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> result-matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'WebStorageComponent.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+       <!-- Required to polyfill modern browsers as code is ES5 for IE... -->
+       <script src="../js/libs/custom-elements-es5-adapter.js" charset="utf-8" defer></script>
+       <script src="../js/menu-wc.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

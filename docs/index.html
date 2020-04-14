@@ -1,0 +1,374 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>angular-demo documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="./images/favicon.ico">
+	      <link rel="stylesheet" href="./styles/style.css">
+        <link rel="stylesheet" href="./styles/Laravel.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+            <a href="./" class="navbar-brand">angular-demo documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content getting-started">
+                   <div class="content-data">
+
+<h1 id="angular-demo">Angular Demo</h1>
+<p>This project contains a collection of demo modules that showcase different techniques and features of Angular development and how to implement them.</p>
+<p>Please know that this project follows <a href="https://angular.io/guide/styleguide">Angular style guid</a>, and all of our future Angular application should follow <a href="https://angular.io/guide/styleguide">Angular style guid</a>.</p>
+<h2 id="feature-modules">Feature Modules</h2>
+<p>This project utilized Angular feature modules to help separate codes related to different features in their own area (each module also utilized lazy loading to decrease load time):</p>
+<ul>
+<li><a href="./additional-documentation/samples/complex-forms.html">Complex Forms Module</a>: Demonstrate how to create a complex form the span across different components</li>
+<li><a href="./additional-documentation/samples/end-to-end-testing.html">End-To-End Testing Module</a>: Demonstrates how to perform end-to-end testing on an Angular application using Protractor</li>
+<li><a href="./additional-documentation/samples/input-and-output.html">Inputs And Outputs Module</a>: General guideline for using <a href="https://angular.io/api/core/Input">inputs</a> and <a href="https://angular.io/api/core/Output">outputs</a> for Angular components</li>
+<li><a href="./additional-documentation/samples/i18n.html">Internationalization Module</a>: Demonstrate how to use <a href="https://github.com/ngx-translate/core">ngx-translate</a></li>
+<li><a href="./additional-documentation/samples/rxjs.html">RxJS Module</a>: Demo the more common operators, and subjects; It does not cover everything within the RxJS library</li>
+<li><a href="./additional-documentation/samples/unit-testing.html">Unit Testing Module</a>: Demonstrate what we are expecting when creating unit tests for different class types</li>
+<li><a href="./additional-documentation/samples/web-storage.html">Web Storage Module</a>: Demonstrate how to add, update, delete, and get items using the <a href="https://developer.mozilla.org/en-US/docs/Web/API/Web_Storage_API">Web Storage Api</a></li>
+</ul>
+<p>To learn more about feature module, please read:</p>
+<ul>
+<li>What is feature module: <a href="https://angular.io/guide/feature-modules">https://angular.io/guide/feature-modules</a></li>
+<li>Different module type: <a href="https://angular.io/guide/module-types">https://angular.io/guide/module-types</a></li>
+<li>What is lazy loaded module: <a href="https://angular.io/guide/lazy-loading-ngmodules">https://angular.io/guide/lazy-loading-ngmodules</a></li>
+<li>What is shared module: <a href="https://angular.io/guide/sharing-ngmodules">https://angular.io/guide/sharing-ngmodules</a></li>
+</ul>
+<h2 id="configurations">Configurations</h2>
+<p>On top of the configurations created by Angular CLI, we also require some additional configurations. This section will go over all the additional configurations expected to be in every future Angular project and on everyone&#39;s machine.</p>
+<h3 id="vscode-workspace-setting">VSCode Workspace Setting</h3>
+<p>It is absolutely necessary for every Angular workspace to have launch and task configurations that allows for debugging <code>npm start</code>, <code>npm run test</code>, and <code>npm run e2e</code>. To create these configurations follow these steps:</p>
+<ol>
+<li>Navigate to the debugger tab with <code>Ctrl+Shift+D</code> or by clicking the debugger icon</li>
+<li>If a launch.json file doesn&#39;t already exists you should see a <code>create a launch.json file</code> link. Click that link, and wait until vscode gives you some options, then select one of them (it doesn&#39;t matter which one because we will be replacing the contents anyways).</li>
+<li>Copy the following json and replace the contents of the launch.json file with them<div><pre class="line-numbers"><code class="language-json">{
+  &quot;version&quot;: &quot;0.2.0&quot;,
+  &quot;configurations&quot;: [
+    {
+      &quot;name&quot;: &quot;ng serve&quot;,
+      &quot;type&quot;: &quot;chrome&quot;,
+      &quot;request&quot;: &quot;launch&quot;,
+      &quot;preLaunchTask&quot;: &quot;npm: start&quot;,
+      &quot;url&quot;: &quot;http://localhost:4200/#&quot;,
+      &quot;webRoot&quot;: &quot;${workspaceFolder}&quot;,
+      &quot;sourceMapPathOverrides&quot;: {
+        &quot;webpack:/*&quot;: &quot;${webRoot}/*&quot;,
+        &quot;/./*&quot;: &quot;${webRoot}/*&quot;,
+        &quot;/src/*&quot;: &quot;${webRoot}/*&quot;,
+        &quot;/*&quot;: &quot;*&quot;,
+        &quot;/./~/*&quot;: &quot;${webRoot}/node_modules/*&quot;
+      }
+    },
+    {
+      &quot;name&quot;: &quot;ng test&quot;,
+      &quot;type&quot;: &quot;chrome&quot;,
+      &quot;request&quot;: &quot;launch&quot;,
+      &quot;url&quot;: &quot;http://localhost:9876/debug.html&quot;,
+      &quot;webRoot&quot;: &quot;${workspaceFolder}&quot;,
+      &quot;sourceMaps&quot;: true,
+      &quot;pathMapping&quot;: {
+        &quot;/_karma_webpack_&quot;: &quot;${workspaceFolder}&quot;
+      },
+      &quot;sourceMapPathOverrides&quot;: {
+        &quot;webpack:/*&quot;: &quot;${webRoot}/*&quot;,
+        &quot;/./*&quot;: &quot;${webRoot}/*&quot;,
+        &quot;/src/*&quot;: &quot;${webRoot}/*&quot;,
+        &quot;/*&quot;: &quot;*&quot;,
+        &quot;/./~/*&quot;: &quot;${webRoot}/node_modules/*&quot;
+      }
+    },
+    {
+      &quot;name&quot;: &quot;ng e2e&quot;,
+      &quot;type&quot;: &quot;node&quot;,
+      &quot;request&quot;: &quot;launch&quot;,
+      &quot;program&quot;: &quot;${workspaceFolder}/node_modules/protractor/bin/protractor&quot;,
+      &quot;protocol&quot;: &quot;inspector&quot;,
+      &quot;args&quot;: [&quot;${workspaceFolder}/e2e/protractor.conf.js&quot;]
+    }
+  ]
+}</code></pre></div></li>
+<li>Create a task.json file in the same .vscode folder as your launch.json then copy and paste the following json into it<div><pre class="line-numbers"><code class="language-json">{
+  &quot;version&quot;: &quot;2.0.0&quot;,
+  &quot;tasks&quot;: [
+    {
+      &quot;type&quot;: &quot;npm&quot;,
+      &quot;script&quot;: &quot;start&quot;,
+      &quot;isBackground&quot;: true,
+      &quot;presentation&quot;: {
+        &quot;focus&quot;: true,
+        &quot;panel&quot;: &quot;dedicated&quot;
+      },
+      &quot;group&quot;: {
+        &quot;kind&quot;: &quot;build&quot;,
+        &quot;isDefault&quot;: true
+      },
+      &quot;problemMatcher&quot;: {
+        &quot;owner&quot;: &quot;typescript&quot;,
+        &quot;source&quot;: &quot;ts&quot;,
+        &quot;applyTo&quot;: &quot;closedDocuments&quot;,
+        &quot;fileLocation&quot;: [&quot;relative&quot;, &quot;${cwd}&quot;],
+        &quot;pattern&quot;: &quot;$tsc&quot;,
+        &quot;background&quot;: {
+          &quot;activeOnStart&quot;: true,
+          &quot;beginsPattern&quot;: {
+            &quot;regexp&quot;: &quot;(.*?)&quot;
+          },
+          &quot;endsPattern&quot;: {
+            &quot;regexp&quot;: &quot;Compiled |Failed to compile.&quot;
+          }
+        }
+      }
+    }
+  ]
+}</code></pre></div></li>
+</ol>
+<p>Once this is done you should see new configuration options in your debug tab that you can choose to run. The <code>ng serve</code> and <code>ng e2e</code> configurations will work the same as the <code>npm start</code> and <code>npm run e2e</code> commands. The <code>ng test</code> command however will require you to still run the <code>npm run test</code> command because it requires a test instance to attach to. The benefit you get from all of these configurations is that you can now add breakpoints to your code base to pause code execution. Allowing you to inspect the state of your application at a given point in time. This makes debugging much easier.</p>
+<h3 id="vscode-plugins">VSCode Plugins</h3>
+<p>Since We expect everyone to utilize Visual Studio Code for Angular application development, the following are all the required VScode plugins:</p>
+<ul>
+<li>Angular Essentials: <code>johnpapa.angular-essentials</code></li>
+<li>Prettier - Code formatter: <code>esbenp.prettier-vscode</code></li>
+<li>npm: <code>eg2.vscode-npm-script</code></li>
+<li>npm Intellisense: <code>christian-kohler.npm-intellisense</code></li>
+<li>Node.js Modules Intellisense: <code>leizongmin.node-module-intellisense</code></li>
+<li>Code Spell Checker: <code>streetsidesoftware.code-spell-checker</code></li>
+<li>GitLens — Git supercharged: <code>eamodio.gitlens</code></li>
+</ul>
+<p>The list can also be found in <code>.vscode/extensions.json</code> of this solution, please copy <code>extensions.json</code> file to other Angular application&#39;s <code>.vscode</code> folder.</p>
+<h3 id="prettier-setting">Prettier Setting</h3>
+<p>Since we need our code formatting to be the same for everyone, <code>.prettierrc</code> file is expected to be present in each Angular project and the file should contain the following:</p>
+<div><pre class="line-numbers"><code class="language-json">{
+  &quot;singleQuote&quot;: true,
+  &quot;printWidth&quot;: 140
+}</code></pre></div><h3 id="git-configuration">Git Configuration</h3>
+<p>We expect each Angular project to contain <code>.gitignore</code> file and <code>.gitattributes</code> file to standardize our git configuration.</p>
+<p><em><code>.gitattributes</code> file should contain <code>* text=auto</code> to normalize line endings</em></p>
+<h3 id="npm-packages">NPM Packages</h3>
+<p>Besides the following packages:</p>
+<ul>
+<li>dependency:<ul>
+<li>angular material</li>
+<li>ngx-logger</li>
+<li>ngx-translate</li>
+</ul>
+</li>
+<li>dev dependency:<ul>
+<li>compodoc</li>
+<li>spectator</li>
+<li>faker</li>
+</ul>
+</li>
+</ul>
+<p>All packages need to be approved before added to the project.</p>
+<h2 id="angular-log-format">Angular Log Format</h2>
+<p>When logging messages, we want to keep a standard format to make it easier for our future selves to debug/troubleshoot. Therefore, we need to make sure the log message follow the format below:</p>
+<div><pre class="line-numbers"><code class="language-none">&lt;Timestamp&gt; &lt;LogLevel&gt; &lt;ClassName&gt;.&lt;MethodName&gt;: &lt;Message&gt;</code></pre></div><ul>
+<li><code>Timestamp</code> is the ISO string representation of when the message is logged</li>
+<li><code>LogLevel</code> is the uppercase string representation of the message&#39;s log level</li>
+<li><code>ClassName</code> is the name of the class that logged the message</li>
+<li><code>MethodName</code> is the name of the method that logged the message, can be omitted if and only if the method is constructor</li>
+<li><code>Message</code> is the actual log message; If necessary, log message should contain data to aid the debugging process</li>
+</ul>
+<p>The following are some example log message:</p>
+<div><pre class="line-numbers"><code class="language-bash"># Not using ngx-logger:
+2020-04-01T14:48:36.580Z DEBUG FooClass.Bar: This is an example
+
+# Using ngx-logger:
+2020-04-01T14:48:36.580Z DEBUG [vendor.js:282391] FooClass.Bar: This is an example</code></pre></div><p><em>Note: <code>Timestamp</code> and <code>LogLevel</code> will be automatically added to your log message when using <a href="https://github.com/dbfannin/ngx-logger">ngx-logger</a></em></p>
+<p>Do keep in mind that, most likely than not, the Angular application will be deployed remotely. Thus, log messages might be our only way to figure out what went wrong. So try to keep the log messages as informative as possible while not drowning the reader.</p>
+<h2 id="code-documentation">Code Documentation</h2>
+<p><em>Basic understanding of how to create comment and different comment type is required for this section. If you need a refresher, please check out <a href="https://github.com/shri/JSDoc-Style-Guide">JSDoc Style Guide</a>.</em></p>
+<p>When documenting code, it is crucial to meet the following expectations so that people can understand what the code suppose to do without polluting it.</p>
+<h3 id="class-comment">Class Comment</h3>
+<p>Class comment should only be created for class that is a service, pipe, guard, or interceptor to help others understand purpose of the class. Following is an example class comment:</p>
+<div><pre class="line-numbers"><code class="language-ts">/**
+ * This service offers basic mathematical operations
+ */
+export class MathService{...}</code></pre></div><h4 id="comment-for-inputs-and-outputs">Comment for inputs and outputs</h4>
+<p>Comment should be created for properties of a component with <code>@Input()</code> or <code>@Output()</code> attribute to help others understand the purpose of those properties. Below is an example comment:</p>
+<div><pre class="line-numbers"><code class="language-ts">/**
+ * User ID required to retrieve user information
+ */
+&#64;Input() id: string;</code></pre></div><h3 id="method-comment">Method Comment</h3>
+<p>Every method should have a method comment, which should include:</p>
+<ul>
+<li>An description of what the method does<ul>
+<li>If the method is complex, consider also explain why method works this way</li>
+<li>If the method is a simple wrapper, the description should be simple</li>
+</ul>
+</li>
+<li>If applicable, <code>@param</code>, <code>@returns</code>, and <code>@throws</code> should also be present<ul>
+<li>Do NOT leave empty comment tag around! (Except the cases were the comment tag meant to be empty)</li>
+</ul>
+</li>
+</ul>
+<p>The following is an example method comment:</p>
+<div><pre class="line-numbers"><code class="language-ts">/**
+ * Subtract b from a
+ *
+ * &#64;param {number} a The first number
+ * &#64;param {number} b The second number
+ *
+ * &#64;returns {number} Difference between a and b
+ *
+ * &#64;throws {RangeError} If a or b is less than zero
+ */
+subtract(a: number, b: number): number { ... }</code></pre></div><h3 id="general-expectations">General Expectations</h3>
+<p>This sections contains some general code documentation expectations that should be followed, and some additional examples.</p>
+<h4 id="descriptive-names">Descriptive names</h4>
+<p>In addition to following <a href="https://angular.io/guide/styleguide#naming">Angular naming conventions</a>, we should also make sure the names accurately reflect the purpose and functionality of the class, method, variable, etc in a short and concise manner. The following is an example of bad names and potential fixes:</p>
+<div><pre class="line-numbers"><code class="language-ts">// Bad Example:
+// Function name and parameter names not reflecting purpose and functionality of each
+a(u: number[], q: number): bool {
+  return u.indexOf(q) &gt; -1;
+ }
+
+// Potential Fixes:
+// Rename method name and parameter names to be more descriptive
+isTargetInArray(array: number[], target: number): bool {
+  return array.indexOf(target) &gt; -1;
+ }</code></pre></div><h4 id="create-document-for-complex-logic">Create document for complex logic</h4>
+<p>If code cannot be explained properly within the comments and cannot be simplified, by refactoring or otherwise, then a document should be created and linked in the comment of the code. An example can be find in <a href="https://gitlab.com/foci-open-source/Foci.OrbitalBus/-/blob/master/OrbitalBus/Foci.Orbital.Agent/Pipelines/AsyncMessageProcessor/AsyncMessageProcessor.cs"><code>AsyncMessageProcessor</code> of old OrbitalBus</a>.</p>
+<h4 id="avoid-inline-comments">Avoid inline comments</h4>
+<p>If the code is complex enough to warrant an inline comment, consider refactor that pieces of code into its own method. Below is an example of how to avoid inline comment:</p>
+<div><pre class="line-numbers"><code class="language-ts">// Bad Example:
+// Inline comment for code that is too complex
+blur(origin: number, x: number): number {
+  ...
+  // calculates Gaussian probability of x
+  const prob = Math.exp(- ((origin - x) ** 2) / (sigma ** 2) / 2.0) / Math.sqrt(2.0 * Math.PI * (sigma ** 2));
+  ...
+}
+
+// Potential Fix:
+// Move complex logic to another method and add comment to that method
+blur(origin: number, x: number): number {
+  ...
+  const prob = gaussian(x, origin, sigma);
+  ...
+}
+
+/**
+ * Calculate Gaussian probability of x
+ *
+ * &#64;param {number} x Target
+ * &#64;param {number} mu Mean of the distribution
+ * &#64;param {number} sigma Variance of the distribution
+ *
+ * &#64;returns {number} Gaussian probability
+ */
+gaussian(x:number, mu: number, sigma: number) {
+  return Math.exp(- ((origin - x) ** 2) / (sigma ** 2) / 2.0) / Math.sqrt(2.0 * Math.PI * (sigma ** 2));
+}</code></pre></div><p>If refactoring cannot be done or the code is already as simple as it can be, consider following advise of <a href="#Create-document-for-complex-logic">create document for complex logic</a> section.</p>
+<h4 id="bad-comment-examples">Bad comment examples</h4>
+<p>People are able to extract the information provided by the following comment from the class name alone, thus the comment is useless:</p>
+<div><pre class="line-numbers"><code class="language-ts">/**
+ * Service that do math
+ */
+export class MathService{...}</code></pre></div><p>Below is an ABSOLUTELY TERRIBLE comment! DON&#39;T ever do this!</p>
+<div><pre class="line-numbers"><code class="language-ts">/**
+ * Join the provided two whole numbers, can be positive, negative, or zero,
+ * to compute the total sum
+ *
+ *  Algorithm: Works by utilizing the cascade of adders (an arithmetic logic units)
+ *     within the processor to perform addition on the 32 bits two&#39;s complement binary
+ *     number together then translate the binary number back to a base 10 number
+ *
+ *  Modification History: last edited by Bob on April 1st to increase performance by
+ *     removing extra space
+ *
+ * &#64;param {number} a The first whole number that can be positive, negative, or zero
+ * &#64;param {number} b The second whole number that can be positive, negative, or zero
+ *
+ * &#64;returns {number} The total amount of the two natural numbers combined
+ */
+add(a: number, b: number): number {
+  return a + b;
+ }</code></pre></div><p>Too much unnecessary information! The code already tell us how it works, we don&#39;t need paragraphs to explain what <code>a + b</code> does and we don&#39;t need to know Bob remove a space (we have git).</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> result-matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 0;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'getting-started';
+            var COMPODOC_CURRENT_PAGE_URL = 'index.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script src="./js/libs/custom-elements.min.js"></script>
+       <script src="./js/libs/lit-html.js"></script>
+       <!-- Required to polyfill modern browsers as code is ES5 for IE... -->
+       <script src="./js/libs/custom-elements-es5-adapter.js" charset="utf-8" defer></script>
+       <script src="./js/menu-wc.js" defer></script>
+
+       <script src="./js/libs/bootstrap-native.js"></script>
+
+       <script src="./js/libs/es6-shim.min.js"></script>
+       <script src="./js/libs/EventDispatcher.js"></script>
+       <script src="./js/libs/promise.min.js"></script>
+       <script src="./js/libs/zepto.min.js"></script>
+
+       <script src="./js/compodoc.js"></script>
+
+       <script src="./js/tabs.js"></script>
+       <script src="./js/menu.js"></script>
+       <script src="./js/libs/clipboard.min.js"></script>
+       <script src="./js/libs/prism.js"></script>
+       <script src="./js/sourceCode.js"></script>
+          <script src="./js/search/search.js"></script>
+          <script src="./js/search/lunr.min.js"></script>
+          <script src="./js/search/search-lunr.js"></script>
+          <script src="./js/search/search_index.js"></script>
+       <script src="./js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

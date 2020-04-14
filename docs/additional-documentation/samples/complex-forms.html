@@ -1,0 +1,141 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>angular-demo documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../../images/favicon.ico">
+	      <link rel="stylesheet" href="../../styles/style.css">
+        <link rel="stylesheet" href="../../styles/Laravel.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+            <a href="../../" class="navbar-brand">angular-demo documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content additional-page">
+                   <div class="content-data">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   
+
+
+
+
+<h2 id="complex-form-module">Complex Form Module</h2>
+<p>This lazy loaded feature module is created to demonstrate how to create a complex form the span across different components. All techniques used in this module are derived from the following tutorials, please give them a read for more indepth understanding:</p>
+<ul>
+<li><a href="https://angular.io/guide/reactive-forms">https://angular.io/guide/reactive-forms</a></li>
+<li><a href="https://angular.io/guide/dynamic-form">https://angular.io/guide/dynamic-form</a></li>
+<li><a href="https://angular.io/guide/lazy-loading-ngmodules">https://angular.io/guide/lazy-loading-ngmodules</a></li>
+</ul>
+<p>This module allow the user to create a team with at least one players in the team.</p>
+<p><em>Folder structure of this module loosely follows <a href="https://angular.io/guide/styleguide">the Angular style guid</a>.</em></p>
+<h3 id="components">Components</h3>
+<p>This module contains 5 components:</p>
+<ul>
+<li><code>ComplexFormComponent</code> is the root component that stitches everything together<ul>
+<li><code>TeamNameInputComponent</code> is used to retrieve team name from user</li>
+<li><code>PlayerListComponent</code> is created for adding and removing player from the provided form array<ul>
+<li><code>PlayerListItemComponent</code> is used to retrieve player name and player type from user</li>
+</ul>
+</li>
+<li><code>ResultComponent</code> is a dialog component for display the retrieved team information</li>
+</ul>
+</li>
+</ul>
+<h3 id="models">Models</h3>
+<p>This module contains serval models to help represent the team information as form inputs:</p>
+<ul>
+<li><code>InputBase</code> represents a basic html input or select<ul>
+<li>Stores information such as <code>FormControlName</code> as <code>key</code>, validators of needed for the input as <code>validators</code>, label of the input as <code>label</code>, etc</li>
+</ul>
+</li>
+<li><code>Team</code> represents the form inputs used to retrieve team information, using <code>InputBase</code><ul>
+<li><code>Player</code> represents the form inputs used to retrieve player information, using <code>InputBase</code><ul>
+<li><code>PlayerType</code> is a enum used for representing different player type</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="services">Services</h3>
+<p>This module only have require one service, which is <code>TeamControlService</code>, to translate <code>Team</code> to and from <code>FormGroup</code>, and also to translate <code>Player</code> to and from <code>FormGroup</code>.</p>
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> result-matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 2;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'additional-page';
+            var COMPODOC_CURRENT_PAGE_URL = 'complex-forms.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script src="../../js/libs/custom-elements.min.js"></script>
+       <script src="../../js/libs/lit-html.js"></script>
+       <!-- Required to polyfill modern browsers as code is ES5 for IE... -->
+       <script src="../../js/libs/custom-elements-es5-adapter.js" charset="utf-8" defer></script>
+       <script src="../../js/menu-wc.js" defer></script>
+
+       <script src="../../js/libs/bootstrap-native.js"></script>
+
+       <script src="../../js/libs/es6-shim.min.js"></script>
+       <script src="../../js/libs/EventDispatcher.js"></script>
+       <script src="../../js/libs/promise.min.js"></script>
+       <script src="../../js/libs/zepto.min.js"></script>
+
+       <script src="../../js/compodoc.js"></script>
+
+       <script src="../../js/tabs.js"></script>
+       <script src="../../js/menu.js"></script>
+       <script src="../../js/libs/clipboard.min.js"></script>
+       <script src="../../js/libs/prism.js"></script>
+       <script src="../../js/sourceCode.js"></script>
+          <script src="../../js/search/search.js"></script>
+          <script src="../../js/search/lunr.min.js"></script>
+          <script src="../../js/search/search-lunr.js"></script>
+          <script src="../../js/search/search_index.js"></script>
+       <script src="../../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>
