@@ -217,7 +217,7 @@ const routes: Routes &#x3D; [{ path: &#x27;&#x27;, component: UnitTestComponent 
 @NgModule({
   declarations: [UnitTestComponent, UppercasePipe],
   imports: [CommonModule, RouterModule.forChild(routes), HttpClientModule, MatInputModule, MatButtonModule, ReactiveFormsModule],
-  providers: [EchoService, EchoTooService, { provide: ECHO_URL, useValue: &#x27;http://httpbin.org/post&#x27; }]
+  providers: [EchoService, EchoTooService, { provide: ECHO_URL, useValue: &#x27;https://httpbin.org/post&#x27; }]
 })
 export class UnitTestModule {}
 </code></pre>
