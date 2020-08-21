@@ -17,6 +17,6 @@ const routes: Routes = [{ path: '', component: UnitTestComponent }];
 @NgModule({
   declarations: [UnitTestComponent, UppercasePipe],
   imports: [CommonModule, RouterModule.forChild(routes), HttpClientModule, MatInputModule, MatButtonModule, ReactiveFormsModule],
-  providers: [EchoService, EchoTooService, { provide: ECHO_URL, useValue: 'http://httpbin.org/post' }]
+  providers: [EchoService, EchoTooService, { provide: ECHO_URL, useValue: 'https://httpbin.org/post' }]
 })
 export class UnitTestModule {}
