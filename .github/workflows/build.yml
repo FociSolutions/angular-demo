@@ -23,13 +23,13 @@ jobs:
         run: npm run test:ci
       - name: Archive build
         if: success()
-        uses: actions/upload-artifact@v1
+        uses: actions/upload-artifact@v4
         with:
           name: dist
           path: dist
       - name: Archive code coverage result
         if: success()
-        uses: actions/upload-artifact@v1
+        uses: actions/upload-artifact@v4
         with:
           name: coverage
           path: coverage
